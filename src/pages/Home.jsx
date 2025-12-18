@@ -2,10 +2,16 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import HomeHero from "../components/HomeHero";
 import Solutions from "../components/Solutions";
+import Path from "../components/Path";
+import Playbook from "../components/Playbook";
+import ExploreComponene from "../components/ExploreComponent";
+import ExploreComponent from "../components/ExploreComponent";
+import ConnectComponent from "../components/ConnectComponent";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <div>
+    <div className="">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -23,6 +29,15 @@ function Home() {
       <Navbar />
       <HomeHero />
       <Solutions />
+      <Path />
+      <div className="bg-secondary">
+        <Playbook />
+      </div>
+      <div className="bg-secondary">
+        <ExploreComponent />
+      </div>
+      <ConnectComponent />
+      <Footer />
     </div>
   );
 }

@@ -57,33 +57,33 @@ function HomeHero() {
 
   // Map scroll to rotation (0 → 90deg)
   const rotateX = useTransform(scrollYProgress, [0, 1], [0, 90]);
+
   return (
     <section
       ref={ref}
-      className="mx-auto max-w-400 flex flex-col space-y-8 items-center px-4 perspective-[1500px] relative my-12"
+      className="mx-auto sm:h-auto max-w-400 flex flex-col space-y-6 md:space-y-8 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] relative my-12 md:my-16 lg:my-20"
     >
-      <p className="font-family-Roobert text-secondary text-center text-7xl  lg:text-8xl self-center">
+      {/* Heading */}
+      <h1 className="font-family-Roobert text-secondary text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl self-center leading-tight">
         Redefining HR: Gamified,
         <br /> AI-Driven, Practical
-      </p>
+      </h1>
 
-      <motion.div
-        // style={{ rotateX, opacity, scale }}
-        className="w-full hidden md:flex justify-center lg:my-5"
-      >
+      {/* Desktop Cards - Hidden on mobile/tablet */}
+      <motion.div className="w-full hidden md:flex justify-center my-5">
         <div
           ref={cardRef}
-          className="w-70 h-70 bg-cover hover:z-10 mt-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl  transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 bg-cover hover:z-10 mt-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero1})`,
             transform: isVisible
-              ? "perspective(1000px)  translateX(0)"
-              : "perspective(1000px)  translateX(-100px)",
+              ? "perspective(1000px) translateX(0)"
+              : "perspective(1000px) translateX(-100px)",
             opacity: isVisible ? 1 : 0,
           }}
         ></div>
         <div
-          className="w-70 h-70 -ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl  transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero2})`,
             transform: isVisible
@@ -93,7 +93,7 @@ function HomeHero() {
           }}
         ></div>
         <div
-          className="w-70 h-70 mt-10 -ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 mt-10 -ml-16 xl:-ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero3})`,
             transform: isVisible
@@ -103,26 +103,48 @@ function HomeHero() {
           }}
         ></div>
         <div
-          className="w-70 h-70 -ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero4})`,
             transform: isVisible
-              ? "perspective(1000px)  translateY(0)"
-              : "perspective(1000px)  translateY(100px)",
+              ? "perspective(1000px) translateY(0)"
+              : "perspective(1000px) translateY(100px)",
             opacity: isVisible ? 1 : 0,
           }}
         ></div>
       </motion.div>
-      <div className="max-w-120 flex space-y-5 flex-col items-center">
-        <p className="font-family-SatoshiMedium text-center  text-primary-text">
+
+      {/* Mobile/Tablet Grid - Shown on smaller screens */}
+      <div className="w-full grid grid-cols-2 gap-4 md:gap-6 md:hidden my-6 ">
+        <div
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl duration-700 ease-out hover:scale-105"
+          style={{ backgroundImage: `url(${HomeHero1})` }}
+        ></div>
+        <div
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl duration-700 ease-out hover:scale-105"
+          style={{ backgroundImage: `url(${HomeHero2})` }}
+        ></div>
+        <div
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl duration-700 ease-out hover:scale-105"
+          style={{ backgroundImage: `url(${HomeHero3})` }}
+        ></div>
+        <div
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl duration-700 ease-out hover:scale-105"
+          style={{ backgroundImage: `url(${HomeHero4})` }}
+        ></div>
+      </div>
+
+      {/* Text and Buttons */}
+      <div className="max-w-120 flex space-y-4 md:space-y-5 flex-col items-center">
+        <p className="font-family-SatoshiMedium text-center text-base sm:text-lg md:text-xl text-primary-text px-4">
           Empower your HR career with gamified learning and AI insights, where
           practical experience meets innovation
         </p>
-        <div className="space-x-2.5 ">
-          <button className="flex-col px-5 py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-[16px] cursor-pointer">
+        <div className="flex sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
+          <button className="w-full sm:w-auto px-5 py-2.5 md:py-3 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm md:text-base cursor-pointer hover:opacity-90 transition-opacity">
             Login
           </button>
-          <button className="px-5 py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-md cursor-pointer">
+          <button className="w-full sm:w-auto px-5 py-2.5 md:py-3 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm md:text-base cursor-pointer hover:opacity-90 transition-opacity">
             Get Started
           </button>
         </div>

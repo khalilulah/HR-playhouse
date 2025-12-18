@@ -9,22 +9,22 @@ function Solutions() {
   return (
     <div className="font-family-SatoshiMedium max-w-400 px-4 sm:px-6 lg:px-8 m-auto">
       <div className=" flex justify-between md:items-center flex-col md:flex-row mb-9">
-        <div className="mr-10">
-          <p className="font-family-Roobert mb-1 text-secondary text-6xl">
+        <div className="sm:mr-10">
+          <p className="font-family-Roobert mb-1 text-3xl text-secondary md:text-6xl">
             Our Core Solutions
           </p>
-          <p className="text-primary-text">
+          <p className="text-primary-text text-base md:text-xl">
             A comprehensive, interactive ecosystem containing everything you
             need to master modern HR.
           </p>
         </div>
         <button className="px-2.5 lg:px-5 py-1 lg:py-2 h-10 w-30 mt-5 md:mt-0 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer">
-          Get Started
+          Learn more
         </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         <div
-          className="bg-secondary bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
+          className="bg-secondary bg-cover h-96 rounded-[10px] flex flex-col justify-end text-xl text-primary p-5"
           style={{
             backgroundImage: `url(${Solutions1})`,
           }}
@@ -36,7 +36,7 @@ function Solutions() {
           </p>
         </div>
         <div
-          className="bg-[#6C4FFF] bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
+          className="bg-secondary text-xl bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
           style={{
             backgroundImage: `url(${Solutions2})`,
           }}
@@ -48,7 +48,7 @@ function Solutions() {
           </p>
         </div>
         <div
-          className="bg-[#6C4FFF] bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
+          className="bg-secondary text-xl bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
           style={{
             backgroundImage: `url(${Solutions3})`,
           }}
@@ -60,7 +60,7 @@ function Solutions() {
           </p>
         </div>
         <div
-          className="bg-[#6C4FFF] bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
+          className="bg-secondary text-xl bg-cover h-96 rounded-[10px] flex flex-col justify-end text-primary p-5"
           style={{
             backgroundImage: `url(${Solutions4})`,
           }}
@@ -72,7 +72,7 @@ function Solutions() {
           </p>
         </div>
         <div
-          className="bg-[#6C4FFF] bg-cover bg-center h-96 rounded-[10px] col-span-1 md:col-span-2 flex flex-col justify-end text-primary p-5"
+          className="bg-secondary text-xl bg-cover bg-center h-96 rounded-[10px] col-span-1 md:col-span-2 flex flex-col justify-end text-primary p-5"
           style={{
             backgroundImage: `url(${Solutions5})`,
           }}
