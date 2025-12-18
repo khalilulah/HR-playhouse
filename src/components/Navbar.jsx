@@ -1,5 +1,6 @@
 import { Menu, X, ChevronDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo.svg";
 
 function Navbar() {
@@ -11,27 +12,27 @@ function Navbar() {
   const navItems = [
     {
       label: "Home",
-      href: "#home",
+      href: "/",
     },
     {
       label: "Solutions",
-      href: "#solutions",
+      href: "/solutions",
     },
     {
       label: "About",
-      href: "#about",
+      href: "/about",
     },
     {
       label: "Case Studies",
-      href: "#case-studies",
+      href: "/case-studies",
     },
     {
       label: "Resources",
-      href: "resources",
+      href: "/resources",
     },
     {
       label: "Contact Us",
-      href: "#contact-us",
+      href: "/contact-us",
     },
   ];
   useEffect(() => {
@@ -59,11 +60,13 @@ function Navbar() {
         <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
             <div className="flex items-center space-x-4.5 lg:space-x-10 cursor-pointer">
-              <img
-                src="src/assets/images/Logo.svg"
-                alt="logo"
-                className=" w-7.5 lg:w-9 h-7.5 lg:h-9"
-              />
+              <Link to="/">
+                <img
+                  src="src/assets/images/Logo.svg"
+                  alt="logo"
+                  className=" w-7.5 lg:w-9 h-7.5 lg:h-9"
+                />
+              </Link>
               {/* Desktop Links */}
               <div className="hidden space-x-4 lg:space-x-10 md:flex text-primary-text">
                 {navItems.map((item, index) => (
@@ -72,13 +75,13 @@ function Navbar() {
                     className="relative"
                     onMouseEnter={() => setHoveredItem(index)}
                   >
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="hover:text-secondary flex items-center gap-1 py-2"
                     >
                       {item.label}
                       {item.children && <ChevronDown className="w-4 h-4" />}
-                    </a>
+                    </Link>
                     {item.children && hoveredItem === index && (
                       <div
                         className="absolute top-full left-0 mt-2 w-48 bg-slate-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10 overflow-hidden"
@@ -145,15 +148,14 @@ function Navbar() {
         <nav className="flex flex-col px-2 space-y-2 text-lg ">
           {navItems.map((item, index) => (
             <div className="hover:bg-secondary-50 pl-2 rounded-sm py-2">
-              <a
-                //
-                href={item.href}
+              <Link
+                to={item.href}
                 className="flex items-center gap-1 "
                 onClick={() => setHoveredItem(index)}
               >
                 {item.label}
                 {item.children && <ChevronDown className="w-4 h-4 mt-1" />}
-              </a>
+              </Link>
               {item.children && hoveredItem === index && (
                 <div
                   className="mt-2 bg-slate-900/95 backdrop-blur-sm shadow-xl overflow-hidden"
