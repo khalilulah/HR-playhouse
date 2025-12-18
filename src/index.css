@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "RoobertBold";
+  src: url("./assets/fonts/RoobertMonoTRIAL-Bold-BF67243fd2cfa56.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RoobertMedium";
+  src: url("./assets/fonts/RoobertMonoTRIAL-Medium-BF67243fd28915a.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiBold";
+  src: url("./assets/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SatoshiMedium";
+  src: url("./assets/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Primary colors */
+  --color-primary: #ffffff;
+  --color-primary-text: #787878;
+
+  /* Secondary colors */
+  --color-secondary: #15426b;
+  --color-secondary-50: #deefff;
+
+  /* Font families */
+  --font-family-sans: "Inter", system-ui, sans-serif;
+  --font-family-Roobert: "RoobertBold", system-ui, sans-serif;
+  --font-family-RoobertMedium: "RoobertMedium", system-ui, sans-serif;
+  --font-family-SatoshiBold: "SatoshiBold", sans-serif;
+  --font-family-SatoshiMedium: "SatoshiMedium", sans-serif;
+  --font-family-serif: "Merriweather", Georgia, serif;
+  --font-family-mono: "Fira Code", monospace;
+  --font-family-display: "Poppins", sans-serif;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-huge: 5rem;
+  --font-size-tiny: 0.625rem;
+}
