@@ -1,10 +1,12 @@
 import { Menu, X, ChevronDown } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/images/Logo.svg";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     {
@@ -32,12 +34,29 @@ function Navbar() {
       href: "#contact-us",
     },
   ];
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       {/* Navbar */}
-      <nav className="sticky top-0 w-full z-50 bg-tranparent font-family-SatoshiMedium">
-        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+      <nav
+        className={`sticky top-0 w-full z-50 font-family-SatoshiMedium transition-all duration-300 ${
+          isScrolled
+            ? "bg-primary/80 backdrop-blur-md shadow-lg"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
             <div className="flex items-center space-x-4.5 lg:space-x-10 cursor-pointer">
               <img
@@ -46,7 +65,7 @@ function Navbar() {
                 className=" w-7.5 lg:w-9 h-7.5 lg:h-9"
               />
               {/* Desktop Links */}
-              <div className="hidden space-x-4.5 lg:space-x-10 md:flex text-primary-text">
+              <div className="hidden space-x-4 lg:space-x-10 md:flex text-primary-text">
                 {navItems.map((item, index) => (
                   <div
                     key={index}
@@ -159,8 +178,6 @@ function Navbar() {
           </button>
         </nav>
       </aside>
-
-      {/* Main Content */}
     </>
   );
 }

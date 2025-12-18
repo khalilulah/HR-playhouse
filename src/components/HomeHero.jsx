@@ -1,0 +1,134 @@
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import HomeHero1 from "../assets/images/Aundre.png";
+import HomeHero2 from "../assets/images/Van.png";
+import HomeHero3 from "../assets/images/Curly.png";
+import HomeHero4 from "../assets/images/Proesc.png";
+
+function HomeHero() {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!cardRef.current) return;
+
+      const rect = cardRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate how far the card is from the top
+      const distanceFromTop = rect.top;
+
+      // Check if card is in viewport (with some threshold)
+      const isInViewport = distanceFromTop < windowHeight * 0.8;
+
+      // Trigger animation when entering viewport
+      if (isInViewport && !isVisible) {
+        setIsVisible(true);
+      }
+
+      // Reset animation when leaving viewport
+      if (!isInViewport && isVisible) {
+        setIsVisible(false);
+      }
+
+      // Calculate scale based on position
+      if (distanceFromTop < windowHeight && distanceFromTop > 0) {
+        const progress = 1 - distanceFromTop / windowHeight;
+        const newScale = 0.9 + progress * 0.1;
+        // setScale(Math.min(newScale, 1));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isVisible]);
+
+  // Track scroll progress of THIS section
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["center center", "start end"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+
+  // Map scroll to rotation (0 → 90deg)
+  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  return (
+    <section
+      ref={ref}
+      className="mx-auto max-w-400 flex flex-col space-y-8 items-center px-4 perspective-[1500px] relative my-12"
+    >
+      <p className="font-family-Roobert text-secondary text-center text-7xl  lg:text-8xl self-center">
+        Redefining HR: Gamified,
+        <br /> AI-Driven, Practical
+      </p>
+
+      <motion.div
+        // style={{ rotateX, opacity, scale }}
+        className="w-full hidden md:flex justify-center lg:my-5"
+      >
+        <div
+          ref={cardRef}
+          className="w-70 h-70 bg-cover hover:z-10 mt-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl  transition duration-700 ease-out hover:scale-105"
+          style={{
+            backgroundImage: `url(${HomeHero1})`,
+            transform: isVisible
+              ? "perspective(1000px)  translateX(0)"
+              : "perspective(1000px)  translateX(-100px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        ></div>
+        <div
+          className="w-70 h-70 -ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl  transition duration-700 ease-out hover:scale-105"
+          style={{
+            backgroundImage: `url(${HomeHero2})`,
+            transform: isVisible
+              ? "perspective(1000px) translateY(0)"
+              : "perspective(1000px) translateY(-200px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        ></div>
+        <div
+          className="w-70 h-70 mt-10 -ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl transition duration-700 ease-out hover:scale-105"
+          style={{
+            backgroundImage: `url(${HomeHero3})`,
+            transform: isVisible
+              ? "perspective(1000px) translateX(0)"
+              : "perspective(1000px) translateX(100px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        ></div>
+        <div
+          className="w-70 h-70 -ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-[32px] shadow-2xl transition duration-700 ease-out hover:scale-105"
+          style={{
+            backgroundImage: `url(${HomeHero4})`,
+            transform: isVisible
+              ? "perspective(1000px)  translateY(0)"
+              : "perspective(1000px)  translateY(100px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        ></div>
+      </motion.div>
+      <div className="max-w-120 flex space-y-5 flex-col items-center">
+        <p className="font-family-SatoshiMedium text-center  text-primary-text">
+          Empower your HR career with gamified learning and AI insights, where
+          practical experience meets innovation
+        </p>
+        <div className="space-x-2.5 ">
+          <button className="flex-col px-5 py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-[16px] cursor-pointer">
+            Login
+          </button>
+          <button className="px-5 py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-md cursor-pointer">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default HomeHero;
