@@ -1,11 +1,11 @@
 import React from "react";
+import PrivacyHero from "../components/PrivacyHero";
 import Navbar from "../components/Navbar";
-import AboutHero from "../components/AboutHero";
-import Mission from "../components/Mission";
-import Different from "../components/Different";
+import PolicyNote from "../components/PolicyNote";
 import Footer from "../components/Footer";
+import ExploreComponent from "../components/ExploreComponent";
 
-function AboutPage() {
+function PrivacyPage() {
   return (
     <div>
       <div
@@ -23,12 +23,14 @@ function AboutPage() {
         }}
       />
       <Navbar />
-      <AboutHero />
-      <Mission />
-      <Different />
+      <PrivacyHero />
+      <PolicyNote />
+      <div className="bg-secondary">
+        <ExploreComponent />
+      </div>
       <Footer />
     </div>
   );
 }
 
-export default AboutPage;
+export default PrivacyPage;

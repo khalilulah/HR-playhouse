@@ -29,8 +29,10 @@ function Solutions() {
             backgroundImage: `url(${Solutions1})`,
           }}
         >
-          <p className="font-family-SatoshiBold">Innovation Lab</p>
-          <p>
+          <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
+            Innovation Lab
+          </p>
+          <p className="text-base sm:text-lg md:text-xl">
             Collaborate on real-world HR challenges. Join project rooms, find
             mentors, and solve actual industry problems with peers.
           </p>
@@ -41,8 +43,10 @@ function Solutions() {
             backgroundImage: `url(${Solutions2})`,
           }}
         >
-          <p className="font-family-SatoshiBold">Gamified Learning</p>
-          <p>
+          <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
+            Gamified Learning
+          </p>
+          <p className="text-base sm:text-lg md:text-xl">
             Engage in interactive, scenario-based learning. Earn XP, badges, and
             track your progress as you master HR skills.
           </p>
@@ -53,8 +57,10 @@ function Solutions() {
             backgroundImage: `url(${Solutions3})`,
           }}
         >
-          <p className="font-family-SatoshiBold">AI-Powered HR Support</p>
-          <p>
+          <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
+            AI-Powered HR Support
+          </p>
+          <p className="text-base sm:text-lg md:text-xl">
             Your smart assistant. Upload HR documents for instant AI-driven
             feedback, insights, and compliance checks.
           </p>
@@ -65,8 +71,10 @@ function Solutions() {
             backgroundImage: `url(${Solutions4})`,
           }}
         >
-          <p className="font-family-SatoshiBold">Case Study Vault</p>
-          <p>
+          <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
+            Case Study Vault
+          </p>
+          <p className="text-base sm:text-lg md:text-xl">
             Sharpen your decision-making. Explore a library of real-world HR
             cases with decision-tree scenarios and expert solutions.
           </p>
@@ -78,10 +86,10 @@ function Solutions() {
           }}
         >
           <div className="md:w-150">
-            <p className="font-family-SatoshiBold text-lg mb-2">
+            <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl mb-2">
               Everyday HR Playbook
             </p>
-            <p>
+            <p className="text-base sm:text-lg md:text-xl">
               Your daily toolkit. Access daily tips, micro-learning streaks, and
               ready-to-use templates for your immediate work needs.
             </p>

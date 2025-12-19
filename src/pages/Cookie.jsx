@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import AboutHero from "../components/AboutHero";
-import Mission from "../components/Mission";
-import Different from "../components/Different";
+import PrivacyHero from "../components/PrivacyHero";
+import PolicyNote from "../components/PolicyNote";
+import ExploreComponent from "../components/ExploreComponent";
 import Footer from "../components/Footer";
+import CookieHero from "../components/CookieHero";
 
-function AboutPage() {
+function Cookie() {
   return (
     <div>
       <div
@@ -23,12 +24,14 @@ function AboutPage() {
         }}
       />
       <Navbar />
-      <AboutHero />
-      <Mission />
-      <Different />
+      <CookieHero />
+      <PolicyNote />
+      <div className="bg-secondary">
+        <ExploreComponent />
+      </div>
       <Footer />
     </div>
   );
 }
 
-export default AboutPage;
+export default Cookie;

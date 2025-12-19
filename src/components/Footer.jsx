@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -26,23 +27,41 @@ function Footer() {
           <div>
             <b className="text-lg md:text-xl">Legal</b>
             <div className="mt-3 space-y-2 md:space-y-3 text-sm md:text-base">
-              <p className="hover:opacity-70 cursor-pointer transition-opacity">
-                Privacy Policy
-              </p>
-              <p className="hover:opacity-70 cursor-pointer transition-opacity">
-                Terms of Service
-              </p>
-              <p className="hover:opacity-70 cursor-pointer transition-opacity">
-                Cookie Policy
-              </p>
+              <div>
+                <Link
+                  to="/privacy"
+                  className="hover:opacity-70 cursor-pointer transition-opacity"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/terms"
+                  className="hover:opacity-70 cursor-pointer transition-opacity"
+                >
+                  Terms of Service
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/cookie"
+                  className="hover:opacity-70 cursor-pointer transition-opacity"
+                >
+                  Cookie Policy
+                </Link>
+              </div>
             </div>
           </div>
           <div className="col-span-2 sm:col-span-1">
             <b className="text-lg md:text-xl">Company</b>
             <div className="mt-3 space-y-2 md:space-y-3 text-sm md:text-base">
-              <p className="hover:opacity-70 cursor-pointer transition-opacity">
+              <Link
+                to="/about"
+                className="hover:opacity-70 cursor-pointer transition-opacity"
+              >
                 About Us
-              </p>
+              </Link>
               <p className="hover:opacity-70 cursor-pointer transition-opacity">
                 Case Studies
               </p>

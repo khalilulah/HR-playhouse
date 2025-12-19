@@ -7,7 +7,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
 
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(window.scrollY > 10);
 
   const navItems = [
     {
