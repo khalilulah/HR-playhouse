@@ -9,6 +9,9 @@ import Privacy from "./pages/PrivacyPage.jsx";
 import Terms from "./pages/TermsAndConditions.jsx";
 import Cookie from "./pages/Cookie.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import CaseStudies from "./pages/CaseStudies.jsx";
+import Solutions from "./pages/Solutions.jsx";
+import Resources from "./pages/Resources.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,6 +24,9 @@ createRoot(document.getElementById("root")).render(
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookie" element={<Cookie />} />
+        <Route path="/case" element={<CaseStudies />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/resources" element={<Resources />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

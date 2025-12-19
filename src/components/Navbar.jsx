@@ -6,8 +6,16 @@ import Logo from "../assets/images/Logo.svg";
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
-
   const [isScrolled, setIsScrolled] = useState(window.scrollY > 10);
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact-us");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      setOpen(false); // Close mobile menu if open
+    }
+  };
 
   const navItems = [
     {
@@ -24,7 +32,7 @@ function Navbar() {
     },
     {
       label: "Case Studies",
-      href: "/case-studies",
+      href: "/case",
     },
     {
       label: "Resources",
@@ -32,9 +40,11 @@ function Navbar() {
     },
     {
       label: "Contact Us",
-      href: "/contact-us",
+      href: "#contact-us",
+      isContactLink: true,
     },
   ];
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -47,6 +57,7 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <>
       {/* Navbar */}
@@ -75,13 +86,23 @@ function Navbar() {
                     className="relative"
                     onMouseEnter={() => setHoveredItem(index)}
                   >
-                    <Link
-                      to={item.href}
-                      className="hover:text-secondary flex items-center gap-1 py-2"
-                    >
-                      {item.label}
-                      {item.children && <ChevronDown className="w-4 h-4" />}
-                    </Link>
+                    {item.isContactLink ? (
+                      <a
+                        href={item.href}
+                        onClick={handleContactClick}
+                        className="hover:text-secondary flex items-center gap-1 py-2 cursor-pointer"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className="hover:text-secondary flex items-center gap-1 py-2"
+                      >
+                        {item.label}
+                        {item.children && <ChevronDown className="w-4 h-4" />}
+                      </Link>
+                    )}
                     {item.children && hoveredItem === index && (
                       <div
                         className="absolute top-full left-0 mt-2 w-48 bg-slate-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10 overflow-hidden"
@@ -147,31 +168,46 @@ function Navbar() {
 
         <nav className="flex flex-col px-2 space-y-2 text-lg ">
           {navItems.map((item, index) => (
-            <div className="hover:bg-secondary-50 pl-2 rounded-sm py-2">
-              <Link
-                to={item.href}
-                className="flex items-center gap-1 "
-                onClick={() => setHoveredItem(index)}
-              >
-                {item.label}
-                {item.children && <ChevronDown className="w-4 h-4 mt-1" />}
-              </Link>
-              {item.children && hoveredItem === index && (
-                <div
-                  className="mt-2 bg-slate-900/95 backdrop-blur-sm shadow-xl overflow-hidden"
-                  onMouseLeave={() => setHoveredItem(null)}
+            <div
+              key={index}
+              className="hover:bg-secondary-50 pl-2 rounded-sm py-2"
+            >
+              {item.isContactLink ? (
+                <a
+                  href={item.href}
+                  onClick={handleContactClick}
+                  className="flex items-center gap-1 cursor-pointer"
                 >
-                  {item.children.map((child, childIndex) => (
-                    <a
-                      key={childIndex}
-                      href={child.href}
-                      className="block px-4 py-3 hover:bg-white/10 hover:text-white transition-colors"
-                      onClick={() => setOpen(false)}
+                  {item.label}
+                </a>
+              ) : (
+                <>
+                  <Link
+                    to={item.href}
+                    className="flex items-center gap-1 "
+                    onClick={() => setHoveredItem(index)}
+                  >
+                    {item.label}
+                    {item.children && <ChevronDown className="w-4 h-4 mt-1" />}
+                  </Link>
+                  {item.children && hoveredItem === index && (
+                    <div
+                      className="mt-2 bg-slate-900/95 backdrop-blur-sm shadow-xl overflow-hidden"
+                      onMouseLeave={() => setHoveredItem(null)}
                     >
-                      {child.label}
-                    </a>
-                  ))}
-                </div>
+                      {item.children.map((child, childIndex) => (
+                        <a
+                          key={childIndex}
+                          href={child.href}
+                          className="block px-4 py-3 hover:bg-white/10 hover:text-white transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
             </div>
           ))}

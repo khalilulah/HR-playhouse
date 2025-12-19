@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="text-secondary border-t-amber-50 font-family-SatoshiMedium max-w-400 px-4 sm:px-6 lg:px-8 m-auto py-8 md:py-12">
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-0">
+    <div
+      id="contact-us"
+      className="text-secondary flex flex-col justify-between border-t-amber-50 font-family-SatoshiMedium max-w-400 b px-4  sm:px-6 lg:px-8 m-auto py-8 md:py-12"
+    >
+      <div className="flex flex-col my-auto lg:flex-row gap-10 lg:gap-0 mb-3">
         {/* Links Section */}
         <div className="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
           <div>
@@ -62,16 +65,21 @@ function Footer() {
               >
                 About Us
               </Link>
-              <p className="hover:opacity-70 cursor-pointer transition-opacity">
-                Case Studies
-              </p>
+              <div>
+                <Link
+                  to="/case"
+                  className="hover:opacity-70 cursor-pointer transition-opacity"
+                >
+                  Case Studies
+                </Link>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Company Info Section */}
         <div className="w-full lg:w-1/2 lg:pl-12 xl:pl-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4">
+          <h2 className="text-4xl md:-mt-5 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
             HR <br /> Playhouse <br /> Hub
           </h2>
           <div className="text-sm md:text-base space-y-2">
@@ -87,11 +95,11 @@ function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-t-2 border-secondary pt-6 mt-8 gap-4 text-sm md:text-base">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-t-2 border-secondary pt-6 gap-4 text-sm md:text-base">
         <p className="text-xs sm:text-sm md:text-base">
           © 2025 HR Playhouse Hub. All rights reserved.
         </p>
-        <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
+        <div className="flex flex-wrap pb-2 space-x-4 sm:gap-6 md:space-x-8">
           <a href="#" className="underline hover:opacity-70 transition-opacity">
             Facebook
           </a>

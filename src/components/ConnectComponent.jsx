@@ -48,7 +48,7 @@ function ConnectComponent() {
               value={formData.firstName}
               onChange={handleChange}
               placeholder="Joseph"
-              className="w-full rounded-lg  placeholder-black border-2  border-none focus:outline-none transition-colors"
+              className="w-full placeholder-black border-2  border-none focus:outline-none transition-colors"
             />
           </div>
 
@@ -60,7 +60,7 @@ function ConnectComponent() {
               value={formData.lastName}
               onChange={handleChange}
               placeholder="Obi"
-              className="w-full rounded-lg  placeholder-black border-2  border-none focus:outline-none transition-colors"
+              className="w-full  placeholder-black border-2  border-none focus:outline-none transition-colors"
             />
           </div>
 
@@ -72,7 +72,7 @@ function ConnectComponent() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Joeobil@icloud.com"
-              className="w-full rounded-lg  placeholder-black border-2  border-none focus:outline-none transition-colors"
+              className="w-full   placeholder-black border-2  border-none focus:outline-none transition-colors"
             />
           </div>
 
