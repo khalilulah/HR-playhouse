@@ -78,8 +78,8 @@ function Footer() {
         </div>
 
         {/* Company Info Section */}
-        <div className="w-full lg:w-1/2 lg:pl-12 xl:pl-20">
-          <h2 className="text-4xl md:-mt-5 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+        <div className="w-full space-y-5 lg:w-1/2 lg:pl-12 xl:pl-20">
+          <h2 className="text-4xl mb-5 md:-mt-5 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
             HR <br /> Playhouse <br /> Hub
           </h2>
           <div className="text-sm md:text-base space-y-2">
