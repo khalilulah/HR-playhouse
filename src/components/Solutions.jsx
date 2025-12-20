@@ -29,10 +29,10 @@ function Solutions() {
             backgroundImage: `url(${Solutions1})`,
           }}
         >
-          <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
+          <p className="font-family-SatoshiBold text-base sm:text- md:text-xl">
             Innovation Lab
           </p>
-          <p className="text-base sm:text-lg md:text-xl">
+          <p className="text-base sm:text-lg">
             Collaborate on real-world HR challenges. Join project rooms, find
             mentors, and solve actual industry problems with peers.
           </p>
@@ -46,7 +46,7 @@ function Solutions() {
           <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
             Gamified Learning
           </p>
-          <p className="text-base sm:text-lg md:text-xl">
+          <p className="text-base sm:text-lg ">
             Engage in interactive, scenario-based learning. Earn XP, badges, and
             track your progress as you master HR skills.
           </p>
@@ -60,7 +60,7 @@ function Solutions() {
           <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
             AI-Powered HR Support
           </p>
-          <p className="text-base sm:text-lg md:text-xl">
+          <p className="text-base sm:text-lg ">
             Your smart assistant. Upload HR documents for instant AI-driven
             feedback, insights, and compliance checks.
           </p>
@@ -74,7 +74,7 @@ function Solutions() {
           <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
             Case Study Vault
           </p>
-          <p className="text-base sm:text-lg md:text-xl">
+          <p className="text-base sm:text-lg ">
             Sharpen your decision-making. Explore a library of real-world HR
             cases with decision-tree scenarios and expert solutions.
           </p>
@@ -89,7 +89,7 @@ function Solutions() {
             <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl mb-2">
               Everyday HR Playbook
             </p>
-            <p className="text-base sm:text-lg md:text-xl">
+            <p className="text-base sm:text-lg ">
               Your daily toolkit. Access daily tips, micro-learning streaks, and
               ready-to-use templates for your immediate work needs.
             </p>

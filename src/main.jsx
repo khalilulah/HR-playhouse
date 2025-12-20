@@ -12,6 +12,8 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import CaseStudies from "./pages/CaseStudies.jsx";
 import Solutions from "./pages/Solutions.jsx";
 import Resources from "./pages/Resources.jsx";
+import Login from "./pages/LoginPage.jsx";
+import SignUpPage from "./pages/SignUpPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -27,6 +29,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/case" element={<CaseStudies />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUpPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

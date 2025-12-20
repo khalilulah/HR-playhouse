@@ -124,11 +124,11 @@ function Navbar() {
               </div>
             </div>
             <div className="space-x-2.5 lg:space-x-5 flex items-center ">
-              <button className="hidden md:inline-block flex-col px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-[16px] cursor-pointer">
-                Login
+              <button className="hidden md:inline-block flex-col px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-[16px] cursor-pointer hover:scale-105">
+                <Link to="/login">Login</Link>
               </button>
-              <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer">
-                Get Started
+              <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer hover:scale-105">
+                <Link to="/signup">Get Started</Link>
               </button>
               {/* Mobile Menu Button */}
 
@@ -211,8 +211,8 @@ function Navbar() {
               )}
             </div>
           ))}
-          <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-md font-family-SatoshiBold text-secondary  cursor-pointer">
-            Login
+          <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-md font-family-SatoshiBold text-secondary  cursor-pointer ">
+            <Link to="/login">Login</Link>
           </button>
         </nav>
       </aside>

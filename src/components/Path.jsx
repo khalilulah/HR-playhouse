@@ -43,7 +43,7 @@ function Path() {
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 1: Learn & Play
                 </p>
-                <p className="text-primary-text text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-primary-text text-base sm:text-lg   leading-relaxed">
                   Start by creating your personalized profile and jumping into
                   immersive, gamified learning modules. Instead of passive
                   watching, you will engage in interactive scenarios—earning XP
@@ -68,7 +68,7 @@ function Path() {
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 2: Apply & Optimize
                 </p>
-                <p className="text-primary-text text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-primary-text text-base sm:text-lg leading-relaxed">
                   Bridge the gap between theory and execution instantly. Access
                   the Everyday Playbook for daily tips and ready-to-use
                   templates, then use our AI-Powered Support to upload your own
@@ -93,7 +93,7 @@ function Path() {
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 3: Solve & Innovate
                 </p>
-                <p className="text-primary-text text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-primary-text text-base sm:text-lg  leading-relaxed">
                   Step into the Innovation Lab to collaborate on authentic
                   industry challenges with peers and mentors. Sharpen your
                   critical thinking in the Case Study Vault, navigating complex
@@ -118,7 +118,7 @@ function Path() {
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 4: Achieve & Ascend
                 </p>
-                <p className="text-primary-text text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-primary-text text-base sm:text-lg leading-relaxed">
                   Turn your progress into professional power. Earn
                   industry-recognized certificates upon completion and unlock
                   exclusive internship pathways designed to boost your
