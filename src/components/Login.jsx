@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Google from "../assets/images/Google.svg";
-import Facebook from "../assets/images/Facebook.svg";
+import Google from "../assets/images/google.svg";
+import Facebook from "../assets/images/facebook.svg";
 import { Link } from "react-router-dom";
 
 function Login() {
