@@ -170,7 +170,7 @@ function Navbar() {
           {navItems.map((item, index) => (
             <div
               key={index}
-              className="hover:bg-secondary-50 pl-2 rounded-sm py-2"
+              className="hover:bg-secondary-50 text-base sm:text-lg  pl-2 rounded-sm py-2"
             >
               {item.isContactLink ? (
                 <a
@@ -184,7 +184,7 @@ function Navbar() {
                 <>
                   <Link
                     to={item.href}
-                    className="flex items-center gap-1 "
+                    className="flex items-center  gap-1 "
                     onClick={() => setHoveredItem(index)}
                   >
                     {item.label}
@@ -211,9 +211,12 @@ function Navbar() {
               )}
             </div>
           ))}
-          <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-md font-family-SatoshiBold text-secondary  cursor-pointer ">
-            <Link to="/login">Login</Link>
-          </button>
+          <Link
+            to="/login"
+            className="px-2.5 lg:px-5 py-1 lg:py-2 text-center bg-secondary-50 rounded-md font-family-SatoshiBold text-secondary text-base sm:text-lg  cursor-pointer "
+          >
+            Login
+          </Link>
         </nav>
       </aside>
     </>

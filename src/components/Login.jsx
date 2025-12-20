@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Google from "../assets/images/Google.svg";
 import Facebook from "../assets/images/Facebook.svg";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -21,9 +22,11 @@ function Login() {
     alert("Form submitted successfully!");
   };
   return (
-    <div className="w-100 sm:w-110 md:w-130 text-sm sm:text-base  bg-primary p-10 font-family-SatoshiMedium rounded-2xl relative z-10">
+    <div className="w-82 sm:w-110 md:w-130 text-sm sm:text-base  bg-primary p-10 font-family-SatoshiMedium rounded-2xl relative z-10">
       <div>
-        <p className="text-secondary font-bold text-3xl">Login to Hub</p>
+        <p className="text-secondary font-bold text-2xl sm:text-3xl">
+          Login to Hub
+        </p>
         <p className="text-primary-text">Continue your ascent.</p>
       </div>
 
@@ -77,7 +80,7 @@ function Login() {
         Don’t have an account?
         <span className="text-secondary font-bold hover:cursor-pointer">
           {" "}
-          Signup
+          <Link to="/signup">SignUp</Link>
         </span>
       </p>
     </div>

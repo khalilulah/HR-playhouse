@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -21,9 +22,11 @@ function SignUp() {
     alert("Form submitted successfully!");
   };
   return (
-    <div className="w-100 text-sm sm:text-base  sm:w-110 md:w-130  bg-primary p-10 font-family-SatoshiMedium rounded-2xl relative z-10">
+    <div className="w-82 text-sm sm:text-base  sm:w-110 md:w-130  bg-primary p-10 font-family-SatoshiMedium rounded-2xl relative z-10">
       <div>
-        <p className="text-secondary font-bold text-3xl">Create Your Account</p>
+        <p className="text-secondary font-bold text-2xl sm:text-3xl">
+          Create Your Account
+        </p>
         <p className="text-primary-text">
           Free access. No credit card required.
         </p>
@@ -87,7 +90,7 @@ function SignUp() {
         Already have an account?
         <span className="text-secondary font-bold hover:cursor-pointer">
           {" "}
-          Login
+          <Link to="/login">Login</Link>
         </span>
       </p>
     </div>
