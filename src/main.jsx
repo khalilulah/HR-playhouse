@@ -16,7 +16,6 @@ import Resources from "./pages/Resources.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* Add more routes here */}
