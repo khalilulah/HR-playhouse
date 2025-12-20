@@ -1,5 +1,5 @@
 import Cookie2 from "../assets/images/Cookie2.png";
-import Cookie from "../assets/images/Cookieimg.png";
+import Cookie from "../assets/images/CookieImg.png";
 
 function CookieHero() {
   return (
