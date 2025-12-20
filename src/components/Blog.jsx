@@ -30,7 +30,7 @@ function Blog() {
               <p className="font-family-Roobert text-2xl md:text-3xl mb-2">
                 How to handle a difficult exit interview.
               </p>
-              <p className="text-lg md:text-xl">
+              <p className="text-base md:text-lg">
                 3 key questions to ask that preserve the relationship...
               </p>
             </div>
@@ -49,7 +49,7 @@ function Blog() {
               <p className="font-family-Roobert text-2xl md:text-3xl mb-2">
                 Free Onboarding Checklist Template.
               </p>
-              <p className="text-lg md:text-xl">
+              <p className="text-base md:text-lg">
                 Discover how automation is freeing up time for human
                 connection...
               </p>
@@ -69,7 +69,7 @@ function Blog() {
               <p className="font-family-Roobert text-2xl md:text-3xl mb-2">
                 Why AI is the new HR Assistant.
               </p>
-              <p className="text-lg md:text-xl">
+              <p className="text-base md:text-lg">
                 Discover how automation is freeing up time for human
                 connection...
               </p>

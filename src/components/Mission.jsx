@@ -17,11 +17,11 @@ function Mission() {
 
       {/* Text Section */}
       <div className="w-full xl:w-1/2 -mt-10 md:mt-0">
-        <p className="font-family-Roobert mb-6 md:mb-6 lg:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl text-secondary leading-tight">
+        <p className="font-family-Roobert mb-6 md:mb-6 lg:mb-8 text-3xl md:text-6xl text-secondary leading-tight">
           Why We Exist
         </p>
         <div className="space-y-4 md:space-y-5 lg:spay-7">
-          <p className="text-primary-text text-base sm:text-lg md:text-xl leading-relaxed">
+          <p className="text-primary-text text-base sm:text-lg leading-relaxed">
             <span className="font-bold text-secondary">Our Mission:</span> To
             successfully bridge the gap between traditional academia and the
             modern workforce. By delivering immersive, simulation-based
@@ -30,7 +30,7 @@ function Mission() {
             actionable mastery.
           </p>
 
-          <p className="text-primary-text text-base sm:text-lg md:text-xl leading-relaxed">
+          <p className="text-primary-text text-base sm:text-lg  leading-relaxed">
             <span className="font-bold text-secondary">Our Vision:</span> To
             successfully bridge the gap between traditional academia and the
             modern workforce. By delivering immersive, simulation-based

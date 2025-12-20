@@ -13,7 +13,7 @@ function ExploreComponent() {
             in the suite.
           </p>
         </div>
-        <button className="px-4 sm:px-5 lg:px-6 py-2 lg:py-3 whitespace-nowrap bg-primary rounded-4xl font-family-SatoshiBold text-secondary text-sm sm:text-base lg:text-md cursor-pointer hover:opacity-90 transition-opacity">
+        <button className="px-4 sm:px-5 lg:px-6 py-2 lg:py-3 whitespace-nowrap bg-primary rounded-4xl font-family-SatoshiBold text-secondary text-base sm:text-lg cursor-pointer hover:opacity-90 transition-opacity">
           Explore the Ecosystem
         </button>
       </div>

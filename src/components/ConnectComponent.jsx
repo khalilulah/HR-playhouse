@@ -27,7 +27,7 @@ function ConnectComponent() {
         <p className="mb-4 text-3xl font-bold text-gray-800 md:text-5xl lg:text-6xl">
           Let’s Connect
         </p>
-        <p className="text-gray-600 text-base md:text-lg lg:text-xl">
+        <p className="text-gray-600 text-base sm:text-lg">
           Have a question about the platform, a partnership idea, or just want
           to say hello? We’d love to hear from you.
         </p>

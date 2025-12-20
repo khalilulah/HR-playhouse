@@ -10,7 +10,7 @@ function SolutionHero() {
         <p className="font-family-Roobert mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-secondary leading-tight">
           The Complete HR Ecosystem
         </p>
-        <p className="text-primary-text text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto xl:mx-0">
+        <p className="text-primary-text text-base sm:text-lg md:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto xl:mx-0">
           A unified platform combining immersive learning, daily tools, and AI
           support. From skill-building to problem-solving, we have you covered.
         </p>

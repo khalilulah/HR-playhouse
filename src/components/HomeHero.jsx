@@ -136,7 +136,7 @@ function HomeHero() {
 
       {/* Text and Buttons */}
       <div className="max-w-120 flex space-y-4 md:space-y-5 flex-col items-center">
-        <p className="font-family-SatoshiMedium text-center text-base sm:text-lg md:text-xl text-primary-text px-4">
+        <p className="font-family-SatoshiMedium text-center text-base sm:text-lg lg:text-xl text-primary-text px-4">
           Empower your HR career with gamified learning and AI insights, where
           practical experience meets innovation
         </p>

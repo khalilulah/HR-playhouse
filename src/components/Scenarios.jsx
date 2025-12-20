@@ -86,7 +86,7 @@ export default function DataCards() {
                 {item.heading}
               </h2>
 
-              <p className="mb-4 text-sm sm:text-base">{item.description}</p>
+              <p className="mb-4 text-base sm:text-lg">{item.description}</p>
 
               <div>
                 <b className="text-secondary">Freatures</b>
@@ -94,7 +94,7 @@ export default function DataCards() {
                   {item.items.map((listItem, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm sm:text-base"
+                      className="flex items-center text-base sm:text-lg"
                     >
                       <span className="w-2 h-2 bg-primary-text rounded-full mr-3 flex-shrink-0"></span>
                       {listItem}

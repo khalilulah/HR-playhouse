@@ -2,7 +2,7 @@ import React from "react";
 
 function PolicyNote() {
   return (
-    <div className="mx-auto max-w-400 font-family-SatoshiMedium text-[#787878] text-base md:text-xl space-y-5 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] relative my-10 ">
+    <div className="mx-auto max-w-400 font-family-SatoshiMedium text-[#787878] text-base sm:text-lg space-y-5 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] relative my-10 ">
       <div>
         <p>
           <span className="text-secondary font-bold">1. Introduction</span>{" "}

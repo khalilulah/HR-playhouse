@@ -46,7 +46,7 @@ function ResourceList() {
               <h2 className="text-xl text-secondary sm:text-2xl font-bold  mb-3">
                 {item.heading}
               </h2>
-              <p className="mb-4 text-sm sm:text-base">{item.description}</p>
+              <p className="mb-4 text-base sm:text-lg">{item.description}</p>
               <button className="px-2.5 lg:px-5 py-1 lg:py-2 border border-secondary rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-md cursor-pointer">
                 Get Started
               </button>

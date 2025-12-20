@@ -35,7 +35,7 @@ function FAQ() {
             className="flex flex-col bg-[#F7F7F7] p-10 rounded-2xl transition-shadow duration-300"
           >
             <div className="w-full flex justify-between space-x-4">
-              <h2 className="text-xl text-secondary sm:text-2xl font-bold mb-3">
+              <h2 className="text-md text-secondary sm:text-xl font-bold mb-3">
                 {item.heading}
               </h2>
               <div
@@ -46,13 +46,13 @@ function FAQ() {
                   <img
                     src="src/assets/images/Close.svg"
                     alt="Close"
-                    className="rounded-lg max-w-10 object-cover"
+                    className="rounded-lg max-w-8 sm:max-w-10 object-cover"
                   />
                 ) : (
                   <img
                     src="src/assets/images/Open.svg"
                     alt="Open"
-                    className="rounded-lg max-w-10 object-cover"
+                    className="rounded-lg max-w-8 sm:max-w-10 object-cover"
                   />
                 )}
               </div>
@@ -60,7 +60,7 @@ function FAQ() {
 
             {openIndex === index && (
               <div className="w-full">
-                <p className="mb-4 text-primary-text text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+                <p className="mb-4 text-primary-text text-base sm:text- md:text-lg lg:text-xl leading-relaxed">
                   {item.description}
                 </p>
               </div>

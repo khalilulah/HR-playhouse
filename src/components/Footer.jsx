@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div
       id="contact-us"
-      className="text-secondary flex flex-col justify-between border-t-amber-50 font-family-SatoshiMedium max-w-400 b px-4  sm:px-6 lg:px-8 m-auto py-8 md:py-12"
+      className="text-secondary text-base sm:text-lg flex flex-col justify-between border-t-amber-50 font-family-SatoshiMedium max-w-400 b px-4  sm:px-6 lg:px-8 m-auto py-8 md:py-12"
     >
       <div className="flex flex-col my-auto lg:flex-row gap-10 lg:gap-0 mb-3">
         {/* Links Section */}
