@@ -1,4 +1,5 @@
-import React from "react";
+import Cookie2 from "../assets/images/Cookie2.png";
+import Cookie from "../assets/images/Cookieimg.png";
 
 function CookieHero() {
   return (
@@ -20,7 +21,7 @@ function CookieHero() {
           {/* Top Right Image */}
           <div className="absolute top-0 left-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/Cookie2.png"
+              src={Cookie2}
               className="w-full h-auto object-cover rounded-lg shadow-2xl transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />
@@ -28,7 +29,7 @@ function CookieHero() {
           {/* Bottom Left Image */}
           <div className="absolute bottom-0 right-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/CookieImg.png"
+              src={Cookie}
               className="w-full h-auto object-cover shadow-2xl rounded-lg transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />

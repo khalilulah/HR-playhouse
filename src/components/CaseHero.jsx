@@ -1,4 +1,5 @@
 import PrivacyAfro from "../assets/images/PrivacyAfro.png";
+import PrivacyAfro2 from "../assets/images/PrivacyAfro2.png";
 
 function CaseHero() {
   return (
@@ -29,7 +30,7 @@ function CaseHero() {
           {/* Bottom Left Image */}
           <div className="absolute bottom-0 left-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/PrivacyAfro2.png"
+              src={PrivacyAfro2}
               className="w-full h-auto object-cover shadow-2xl rounded-lg transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />
