@@ -1,4 +1,6 @@
 import React from "react";
+import Femme1 from "../assets/images/Femme1.png";
+import Femme2 from "../assets/images/Femme2.png";
 
 function SolutionHero() {
   return (
@@ -21,7 +23,7 @@ function SolutionHero() {
           {/* Top Right Image */}
           <div className="absolute top-0 left-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/Femme1.png"
+              src={Femme1}
               className="w-full h-auto object-cover rounded-lg shadow-2xl transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />
@@ -29,7 +31,7 @@ function SolutionHero() {
           {/* Bottom Left Image */}
           <div className="absolute bottom-0 right-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/Femme2.png"
+              src={Femme2}
               className="w-full h-auto object-cover shadow-2xl rounded-lg transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />

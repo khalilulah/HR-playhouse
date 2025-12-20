@@ -1,5 +1,9 @@
 import React from "react";
 import Brand1 from "../assets/images/Brand1.png";
+import Brand2 from "../assets/images/Brand2.png";
+import Brand3 from "../assets/images/Brand3.png";
+import Brand4 from "../assets/images/Brand4.png";
+import Line from "../assets/images/Line.png";
 
 function Path() {
   return (
@@ -20,11 +24,7 @@ function Path() {
       <div className="relative">
         {/* Line in the middle */}
         <div className="hidden lg:flex absolute left-1/2 top-0 -translate-x-1/2 h-full w-auto z-0">
-          <img
-            src="src/assets/images/Line.png"
-            alt=""
-            className="h-full w-auto object-cover"
-          />
+          <img src={Line} alt="" className="h-full w-auto object-cover" />
         </div>
 
         <div className="relative z-10 space-y-12 md:space-y-16 lg:space-y-20">
@@ -32,7 +32,7 @@ function Path() {
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 lg:justify-between">
             <div className="w-full lg:w-[45%]">
               <img
-                src="src/assets/images/Brand1.png"
+                src={Brand1}
                 alt="Learn & Play"
                 className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
@@ -57,7 +57,7 @@ function Path() {
           <div className="flex flex-col lg:flex-row-reverse gap-6 md:gap-8 lg:gap-12 lg:justify-between">
             <div className="w-full lg:w-[45%]">
               <img
-                src="src/assets/images/Brand2.png"
+                src={Brand2}
                 alt="Apply & Optimize"
                 className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
@@ -82,7 +82,7 @@ function Path() {
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 lg:justify-between">
             <div className="w-full lg:w-[45%]">
               <img
-                src="src/assets/images/Brand3.png"
+                src={Brand3}
                 alt="Solve & Innovate"
                 className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
@@ -107,7 +107,7 @@ function Path() {
           <div className="flex flex-col lg:flex-row-reverse gap-6 md:gap-8 lg:gap-12 lg:justify-between">
             <div className="w-full lg:w-[45%]">
               <img
-                src="src/assets/images/Brand4.png"
+                src={Brand4}
                 alt="Achieve & Ascend"
                 className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
               />

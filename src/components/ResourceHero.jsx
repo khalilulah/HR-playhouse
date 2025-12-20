@@ -1,4 +1,5 @@
-import React from "react";
+import Freepik1 from "../assets/images/Freepik1.png";
+import Freepik2 from "../assets/images/Freepik2.png";
 
 function ResourceHero() {
   return (
@@ -21,7 +22,7 @@ function ResourceHero() {
           {/* Top Right Image */}
           <div className="absolute top-0 right-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/Freepik1.png"
+              src={Freepik1}
               className="w-full h-auto object-cover rounded-lg shadow-2xl transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />
@@ -29,7 +30,7 @@ function ResourceHero() {
           {/* Bottom Left Image */}
           <div className="absolute bottom-0 left-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/Freepik2.png"
+              src={Freepik2}
               className="w-full h-auto object-cover shadow-2xl rounded-lg transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />

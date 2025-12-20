@@ -73,7 +73,7 @@ function HomeHero() {
       <motion.div className="w-full hidden md:flex justify-center my-5">
         <div
           ref={cardRef}
-          className="w-60 h-60 xl:w-70 xl:h-70 bg-cover hover:z-10 mt-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 bg-cover hover:z-10 mt-10 rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero1})`,
             transform: isVisible
@@ -83,7 +83,7 @@ function HomeHero() {
           }}
         ></div>
         <div
-          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10  rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero2})`,
             transform: isVisible
@@ -93,7 +93,7 @@ function HomeHero() {
           }}
         ></div>
         <div
-          className="w-60 h-60 xl:w-70 xl:h-70 mt-10 -ml-16 xl:-ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 mt-10 -ml-16 xl:-ml-20 bg-cover hover:z-10  rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero3})`,
             transform: isVisible
@@ -103,7 +103,7 @@ function HomeHero() {
           }}
         ></div>
         <div
-          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 bg-[#6C4FFF] rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
+          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10  rounded-3xl shadow-2xl transition duration-700 ease-out hover:scale-105"
           style={{
             backgroundImage: `url(${HomeHero4})`,
             transform: isVisible

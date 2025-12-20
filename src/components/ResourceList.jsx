@@ -1,21 +1,23 @@
-import React from "react";
+import Resource1 from "../assets/images/Resource1.png";
+import Resource2 from "../assets/images/Resource2.png";
+import Resource3 from "../assets/images/Resource3.png";
 
 function ResourceList() {
   const data = [
     {
-      image: "src/assets/images/Resource1.png",
+      image: `${Resource1}`,
       heading: "Gamified Learning Modules",
       description:
         "Forget boring slide decks. Our interactive modules place you in realistic HR scenarios where your choices matter. Navigate employee conflicts, compliance risks, and recruitment challenges in a risk-free virtual environment.",
     },
     {
-      image: "src/assets/images/Resource2.png",
+      image: `${Resource2}`,
       heading: "Gamified Learning Modules",
       description:
         "Forget boring slide decks. Our interactive modules place you in realistic HR scenarios where your choices matter. Navigate employee conflicts, compliance risks, and recruitment challenges in a risk-free virtual environment.",
     },
     {
-      image: "src/assets/images/Resource3.png",
+      image: `${Resource3}`,
       heading: "Gamified Learning Modules",
       description:
         "Forget boring slide decks. Our interactive modules place you in realistic HR scenarios where your choices matter. Navigate employee conflicts, compliance risks, and recruitment challenges in a risk-free virtual environment.",
@@ -24,7 +26,7 @@ function ResourceList() {
   return (
     <div className="font-family-SatoshiMedium max-w-400 mx-auto px-4 sm:px-6 lg:px-8 m-auto py-8 md:py-12 text-primary-text">
       <p className="font-family-Roobert mb-6 text-3xl text-secondary md:text-6xl">
-        Real-World Scenarios
+        Our Resources
       </p>
       <div className="flex flex-col space-y-10">
         {data.map((item, index) => (

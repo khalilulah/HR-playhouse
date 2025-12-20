@@ -1,16 +1,12 @@
 import React from "react";
-
+import img from "../assets/images/AboutGroup.png";
 function Mission() {
   return (
     <div className="max-w-400 flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 m-auto px-4 sm:px-6 lg:px-8 my-12 md:my-16 lg:mt-20">
       {/* Images Section */}
       <div className="w-full xl:w-1/2 flex items-center justify-center">
         {/* Large screen image */}
-        <img
-          src="src/assets/images/AboutGroup.png"
-          className="w-full"
-          alt="HR Playhouse team"
-        />
+        <img src={img} className="w-full" alt="HR Playhouse team" />
         {/* Small screen image */}
         {/* <img
           src="src/assets/images/Team.png"

@@ -1,9 +1,18 @@
 import React from "react";
+import Solutions1 from "../assets/images/Solutions1.png";
+import Solutions2 from "../assets/images/Solutions2.png";
+import Solutions3 from "../assets/images/Solutions3.png";
+import Solutions4 from "../assets/images/Solutions4.png";
+import Solutions5 from "../assets/images/Solutions5.png";
+
+import Brand2 from "../assets/images/Brand2.png";
+import Brand3 from "../assets/images/Brand3.png";
+import Brand1 from "../assets/images/Brand1.png";
 
 export default function DataCards() {
   const data = [
     {
-      image: "src/assets/images/Solutions1.png",
+      image: `${Solutions1}`,
       heading: "Gamified Learning Modules",
       description:
         "Forget boring slide decks. Our interactive modules place you in realistic HR scenarios where your choices matter. Navigate employee conflicts, compliance risks, and recruitment challenges in a risk-free virtual environment.",
@@ -14,7 +23,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/Solutions2.png",
+      image: `${Solutions2}`,
       heading: "The Everyday HR Playbook",
       description:
         "Consistency creates mastery. The Playbook is your daily companion, offering bite-sized wisdom and practical tools to keep you sharp. From quick tips to downloadable templates, it ensures you are ready for whatever the workday throws at you",
@@ -25,7 +34,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/Solutions3.png",
+      image: `${Solutions3}`,
       heading: "AI-Powered HR Support",
       description:
         "Need a second pair of eyes on that policy draft? Our AI support system analyzes your documents—CVs, memos, compliance forms—and provides instant, actionable feedback to improve clarity, tone, and legal alignment.",
@@ -36,7 +45,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/Solutions4.png",
+      image: `${Solutions4}`,
       heading: "Virtual Innovation Lab",
       description:
         "HR doesn't happen in a vacuum. The Innovation Lab is a digital co-working space where you can join forces with peers and mentors to tackle live industry challenges. It’s where theory meets the messiness of the real world.",
@@ -47,7 +56,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/Solutions5.png",
+      image: `${Solutions5}`,
       heading: "The Case Study Vault",
       description: `Access a curated library of historical and hypothetical HR cases. Analyze the "Decision Trees" to see how different choices lead to different strategic outcomes, backed by expert commentary and legal precedents.`,
       items: [

@@ -1,4 +1,6 @@
-import React from "react";
+import Office from "../assets/images/Office.png";
+import Office2 from "../assets/images/Office2.png";
+import Office3 from "../assets/images/Office3.png";
 
 function Blog() {
   return (
@@ -20,7 +22,7 @@ function Blog() {
         <div className="text-seconday-text font-family-RoobertMedium grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <div className="flex flex-col">
             <img
-              src="src/assets/images/Office.png"
+              src={Office}
               alt="image"
               className="rounded-xl w-full h-auto object-cover"
             />
@@ -39,7 +41,7 @@ function Blog() {
 
           <div className="flex flex-col">
             <img
-              src="src/assets/images/Office2.png"
+              src={Office2}
               alt="image"
               className="rounded-xl w-full h-auto object-cover"
             />
@@ -59,7 +61,7 @@ function Blog() {
 
           <div className="flex flex-col">
             <img
-              src="src/assets/images/Office3.png"
+              src={Office3}
               alt="image"
               className="rounded-xl w-full h-auto object-cover"
             />

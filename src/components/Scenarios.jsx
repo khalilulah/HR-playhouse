@@ -1,9 +1,13 @@
-import React from "react";
+import ScenarioImg from "../assets/images/ScenarioImg.png";
+import ScenarioImg2 from "../assets/images/ScenarioImg2.png";
+import ScenarioImg3 from "../assets/images/ScenarioImg3.png";
+import ScenarioImg4 from "../assets/images/ScenarioImg4.png";
+import ScenarioImg5 from "../assets/images/ScenarioImg5.png";
 
 export default function DataCards() {
   const data = [
     {
-      image: "src/assets/images/ScenarioImg.png",
+      image: `${ScenarioImg}`,
       heading: "Gamified Learning Modules",
       description:
         "Forget boring slide decks. Our interactive modules place you in realistic HR scenarios where your choices matter. Navigate employee conflicts, compliance risks, and recruitment challenges in a risk-free virtual environment.",
@@ -14,7 +18,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/ScenarioImg2.png",
+      image: `${ScenarioImg2}`,
       heading: "The Everyday HR Playbook",
       description:
         "Consistency creates mastery. The Playbook is your daily companion, offering bite-sized wisdom and practical tools to keep you sharp. From quick tips to downloadable templates, it ensures you are ready for whatever the workday throws at you",
@@ -25,7 +29,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/ScenarioImg3.png",
+      image: `${ScenarioImg3}`,
       heading: "AI-Powered HR Support",
       description:
         "Need a second pair of eyes on that policy draft? Our AI support system analyzes your documents—CVs, memos, compliance forms—and provides instant, actionable feedback to improve clarity, tone, and legal alignment.",
@@ -36,7 +40,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/ScenarioImg4.png",
+      image: `${ScenarioImg4}`,
       heading: "Virtual Innovation Lab",
       description:
         "HR doesn't happen in a vacuum. The Innovation Lab is a digital co-working space where you can join forces with peers and mentors to tackle live industry challenges. It’s where theory meets the messiness of the real world.",
@@ -47,7 +51,7 @@ export default function DataCards() {
       ],
     },
     {
-      image: "src/assets/images/ScenarioImg5.png",
+      image: `${ScenarioImg5}`,
       heading: "The Case Study Vault",
       description: `Access a curated library of historical and hypothetical HR cases. Analyze the "Decision Trees" to see how different choices lead to different strategic outcomes, backed by expert commentary and legal precedents.`,
       items: [

@@ -1,4 +1,4 @@
-import React from "react";
+import PrivacyAfro from "../assets/images/PrivacyAfro.png";
 
 function CaseHero() {
   return (
@@ -21,7 +21,7 @@ function CaseHero() {
           {/* Top Right Image */}
           <div className="absolute top-0 right-0 w-[63%] sm:w-[58%] md:w-[60%]">
             <img
-              src="src/assets/images/PrivacyAfro.png"
+              src={PrivacyAfro}
               className="w-full h-auto object-cover rounded-lg shadow-2xl transition duration-700 ease-out hover:scale-105 "
               alt="HR Playhouse team member"
             />

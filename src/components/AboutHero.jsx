@@ -1,3 +1,4 @@
+import img from "../assets/images/GroupTest.png";
 function AboutHero() {
   return (
     <div className="mx-auto  max-w-400 flex justify-center flex-col-reverse xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] h-screen  -mt-15 md:mt-0">
@@ -14,7 +15,7 @@ function AboutHero() {
       {/* Images Section */}
       <div className="w-full xl:w-1/2 flex items-center justify-center">
         <img
-          src="src/assets/images/GroupTest.png"
+          src={img}
           className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-full"
           alt="HR Playhouse team"
         />

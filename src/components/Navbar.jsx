@@ -73,7 +73,7 @@ function Navbar() {
             <div className="flex items-center space-x-4.5 lg:space-x-10 cursor-pointer">
               <Link to="/">
                 <img
-                  src="src/assets/images/Logo.svg"
+                  src={Logo}
                   alt="logo"
                   className=" w-7.5 lg:w-9 h-7.5 lg:h-9"
                 />
