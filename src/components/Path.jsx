@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Brand1 from "../assets/images/Brand1.png";
 import Brand2 from "../assets/images/Brand2.png";
 import Brand3 from "../assets/images/Brand3.png";
@@ -6,6 +6,36 @@ import Brand4 from "../assets/images/Brand4.png";
 import Line from "../assets/images/Line.png";
 
 function Path() {
+  const [visibleSteps, setVisibleSteps] = useState([]);
+  const stepRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = stepRefs.current.map((ref, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleSteps((prev) => [...new Set([...prev, index])]);
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      if (ref) {
+        observer.observe(ref);
+      }
+
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer, index) => {
+        if (stepRefs.current[index]) {
+          observer.unobserve(stepRefs.current[index]);
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className="max-w-400 m-auto px-4 sm:px-6 lg:px-8 my-12 md:my-20 lg:my-32">
       {/* heading */}
@@ -29,7 +59,14 @@ function Path() {
 
         <div className="relative z-10 space-y-12 md:space-y-16 lg:space-y-20">
           {/* Step 1 - Image Left, Text Right */}
-          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 lg:justify-between">
+          <div
+            ref={(el) => (stepRefs.current[0] = el)}
+            className={`flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 lg:justify-between transition-all duration-700 ${
+              visibleSteps.includes(0)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="w-full lg:w-[45%]">
               <img
                 src={Brand1}
@@ -43,7 +80,7 @@ function Path() {
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 1: Learn & Play
                 </p>
-                <p className="text-primary-text text-base sm:text-lg   leading-relaxed">
+                <p className="text-primary-text text-base sm:text-lg leading-relaxed">
                   Start by creating your personalized profile and jumping into
                   immersive, gamified learning modules. Instead of passive
                   watching, you will engage in interactive scenarios—earning XP
@@ -54,7 +91,14 @@ function Path() {
           </div>
 
           {/* Step 2 - Text Left, Image Right */}
-          <div className="flex flex-col lg:flex-row-reverse gap-6 md:gap-8 lg:gap-12 lg:justify-between">
+          <div
+            ref={(el) => (stepRefs.current[1] = el)}
+            className={`flex flex-col lg:flex-row-reverse gap-6 md:gap-8 lg:gap-12 lg:justify-between transition-all duration-700 ${
+              visibleSteps.includes(1)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="w-full lg:w-[45%]">
               <img
                 src={Brand2}
@@ -79,7 +123,14 @@ function Path() {
           </div>
 
           {/* Step 3 - Image Left, Text Right */}
-          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 lg:justify-between">
+          <div
+            ref={(el) => (stepRefs.current[2] = el)}
+            className={`flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 lg:justify-between transition-all duration-700 ${
+              visibleSteps.includes(2)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="w-full lg:w-[45%]">
               <img
                 src={Brand3}
@@ -93,7 +144,7 @@ function Path() {
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 3: Solve & Innovate
                 </p>
-                <p className="text-primary-text text-base sm:text-lg  leading-relaxed">
+                <p className="text-primary-text text-base sm:text-lg leading-relaxed">
                   Step into the Innovation Lab to collaborate on authentic
                   industry challenges with peers and mentors. Sharpen your
                   critical thinking in the Case Study Vault, navigating complex
@@ -104,7 +155,14 @@ function Path() {
           </div>
 
           {/* Step 4 - Text Left, Image Right */}
-          <div className="flex flex-col lg:flex-row-reverse gap-6 md:gap-8 lg:gap-12 lg:justify-between">
+          <div
+            ref={(el) => (stepRefs.current[3] = el)}
+            className={`flex flex-col lg:flex-row-reverse gap-6 md:gap-8 lg:gap-12 lg:justify-between transition-all duration-700 ${
+              visibleSteps.includes(3)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="w-full lg:w-[45%]">
               <img
                 src={Brand4}

@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Solutions1 from "../assets/images/Solutions1.png";
 import Solutions2 from "../assets/images/Solutions2.png";
 import Solutions3 from "../assets/images/Solutions3.png";
 import Solutions4 from "../assets/images/Solutions4.png";
 import Solutions5 from "../assets/images/Solutions5.png";
 
-import Brand2 from "../assets/images/Brand2.png";
-import Brand3 from "../assets/images/Brand3.png";
-import Brand1 from "../assets/images/Brand1.png";
-
 export default function DataCards() {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardRefs = useRef([]);
+
   const data = [
     {
       image: `${Solutions1}`,
@@ -48,7 +47,7 @@ export default function DataCards() {
       image: `${Solutions4}`,
       heading: "Virtual Innovation Lab",
       description:
-        "HR doesn't happen in a vacuum. The Innovation Lab is a digital co-working space where you can join forces with peers and mentors to tackle live industry challenges. It’s where theory meets the messiness of the real world.",
+        "HR doesn't happen in a vacuum. The Innovation Lab is a digital co-working space where you can join forces with peers and mentors to tackle live industry challenges. It's where theory meets the messiness of the real world.",
       items: [
         "Group Challenges: Work on teams to solve complex problems.",
         "Mentor Access: Get guidance from seasoned industry pros.",
@@ -67,49 +66,75 @@ export default function DataCards() {
     },
   ];
 
+  useEffect(() => {
+    cardRefs.current.forEach((ref, index) => {
+      if (!ref) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => [...prev, index]);
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(ref);
+    });
+  }, []);
+
   return (
     <div className="font-family-SatoshiMedium max-w-400 mx-auto px-4 sm:px-6 lg:px-8 m-auto py-8 md:py-12 text-primary-text">
       <p className="font-family-Roobert mb-6 text-3xl text-secondary md:text-6xl">
         This isn't just a course; it's a toolkit.
       </p>
       <div className="flex flex-col space-y-10">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row transition-shadow duration-300"
-          >
-            <div className="w-full md:w-1/2">
-              <img
-                src={item.image}
-                alt={item.heading}
-                className="w-full h-100 rounded-lg object-cover "
-              />
-            </div>
+        {data.map((item, index) => {
+          const isVisible = visibleCards.includes(index);
 
-            <div className="w-full md:w-1/2 pl-6 -700">
-              <h2 className="text-xl text-secondary sm:text-2xl font-bold  mb-3">
-                {item.heading}
-              </h2>
+          return (
+            <div
+              key={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className={`flex flex-col md:flex-row transition-all duration-700 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <div className="w-full md:w-1/2">
+                <img
+                  src={item.image}
+                  alt={item.heading}
+                  className="w-full h-100 rounded-lg object-cover transition-transform duration-500"
+                />
+              </div>
 
-              <p className="mb-4 text-base sm:text-lg">{item.description}</p>
+              <div className="w-full mt-5 md:w-1/2 md:pl-6 md:mt-0">
+                <h2 className="text-xl text-secondary sm:text-2xl font-bold mb-3">
+                  {item.heading}
+                </h2>
 
-              <div>
-                <b className="text-secondary">Freatures</b>
-                <ul className="space-y-2 ml-3">
-                  {item.items.map((listItem, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center text-base sm:text-lg"
-                    >
-                      <span className="w-2 h-2 bg-primary-text rounded-full mr-3 flex-shrink-0"></span>
-                      {listItem}
-                    </li>
-                  ))}
-                </ul>
+                <p className="mb-4 text-base sm:text-lg">{item.description}</p>
+
+                <div>
+                  <b className="text-secondary">Features</b>
+                  <ul className="space-y-2 ml-3">
+                    {item.items.map((listItem, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center text-base sm:text-lg"
+                      >
+                        <span className="w-2 h-2 bg-primary-text rounded-full mr-3 flex-shrink-0"></span>
+                        {listItem}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
