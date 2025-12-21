@@ -1,19 +1,20 @@
 import { Menu, X, ChevronDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images/Logo.svg";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isScrolled, setIsScrolled] = useState(window.scrollY > 10);
+  const location = useLocation();
 
   const handleContactClick = (e) => {
     e.preventDefault();
     const contactSection = document.getElementById("contact-us");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      setOpen(false); // Close mobile menu if open
+      setOpen(false);
     }
   };
 
@@ -58,6 +59,14 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check if the current path matches the nav item
+  const isActive = (href) => {
+    if (href === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(href);
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -97,7 +106,11 @@ function Navbar() {
                     ) : (
                       <Link
                         to={item.href}
-                        className="hover:text-secondary flex items-center gap-1 py-2"
+                        className={`flex items-center gap-1 py-2 transition-colors ${
+                          isActive(item.href)
+                            ? "text-secondary font-bold border-b-2 border-secondary"
+                            : "hover:text-secondary"
+                        }`}
                       >
                         {item.label}
                         {item.children && <ChevronDown className="w-4 h-4" />}
@@ -124,10 +137,10 @@ function Navbar() {
               </div>
             </div>
             <div className="space-x-2.5 lg:space-x-5 flex items-center ">
-              <button className="hidden md:inline-block flex-col px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-[16px] cursor-pointer hover:scale-105">
+              <button className="hidden md:inline-block flex-col px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-[16px] cursor-pointer hover:scale-105 transition-transform duration-300">
                 <Link to="/login">Login</Link>
               </button>
-              <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer hover:scale-105">
+              <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer hover:scale-105 transition-transform duration-300">
                 <Link to="/signup">Get Started</Link>
               </button>
               {/* Mobile Menu Button */}
@@ -170,7 +183,11 @@ function Navbar() {
           {navItems.map((item, index) => (
             <div
               key={index}
-              className="hover:bg-secondary-50 text-base sm:text-lg  pl-2 rounded-sm py-2"
+              className={`text-base sm:text-lg pl-2 rounded-sm py-2 transition-colors ${
+                isActive(item.href) && !item.isContactLink
+                  ? "bg-secondary text-primary font-bold"
+                  : "hover:bg-secondary-50"
+              }`}
             >
               {item.isContactLink ? (
                 <a
@@ -184,8 +201,11 @@ function Navbar() {
                 <>
                   <Link
                     to={item.href}
-                    className="flex items-center  gap-1 "
-                    onClick={() => setHoveredItem(index)}
+                    className="flex items-center gap-1"
+                    onClick={() => {
+                      setHoveredItem(index);
+                      setOpen(false);
+                    }}
                   >
                     {item.label}
                     {item.children && <ChevronDown className="w-4 h-4 mt-1" />}
@@ -213,7 +233,7 @@ function Navbar() {
           ))}
           <Link
             to="/login"
-            className="px-2.5 lg:px-5 py-1 lg:py-2 text-center bg-secondary-50 rounded-md font-family-SatoshiBold text-secondary text-base sm:text-lg  cursor-pointer "
+            className="px-2.5 lg:px-5 py-1 lg:py-2 text-center bg-secondary-50 rounded-md font-family-SatoshiBold text-secondary text-base sm:text-lg cursor-pointer "
           >
             Login
           </Link>
