@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import Open from "../assets/images/Open.svg";
+import Close from "../assets/images/Close.svg";
 
 const data = [
   {
@@ -98,13 +100,13 @@ function FAQ() {
                 >
                   {openIndex === index ? (
                     <img
-                      src="src/assets/images/Close.svg"
+                      src={Close}
                       alt="Close"
                       className="rounded-lg max-w-8 sm:max-w-10 object-cover transition-transform duration-300 rotate-90"
                     />
                   ) : (
                     <img
-                      src="src/assets/images/Open.svg"
+                      src={Open}
                       alt="Open"
                       className="rounded-lg max-w-8 sm:max-w-10 object-cover"
                     />
