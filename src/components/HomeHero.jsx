@@ -36,6 +36,20 @@ function HomeHero() {
     offset: ["center center", "start end"],
   });
 
+  // Sponsor logos data (replace with your actual sponsor names/logos)
+  const sponsors = [
+    "Microsoft",
+    "Google",
+    "Amazon",
+    "Meta",
+    "Apple",
+    "Netflix",
+    "Tesla",
+    "Oracle",
+    "Salesforce",
+    "Adobe",
+  ];
+
   return (
     <section
       ref={ref}
@@ -204,6 +218,79 @@ function HomeHero() {
           </Link>
         </motion.div>
       </div>
+
+      {/* Sponsors Marquee */}
+      <motion.div
+        className="w-full overflow-hidden mt-12 md:mt-16"
+        initial={{ opacity: 0 }}
+        animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
+      >
+        <div className="text-center mb-6">
+          <p className="text-primary-text/60 font-family-SatoshiMedium text-sm md:text-base uppercase tracking-wider">
+            Trusted by Leading Organizations
+          </p>
+        </div>
+        <div className="relative flex overflow-hidden">
+          {/* Gradient overlays for smooth fade effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none"></div>
+
+          {/* First set of sponsors */}
+          <motion.div
+            className="flex gap-12 md:gap-16 lg:gap-20 pr-12 md:pr-16 lg:pr-20"
+            animate={{
+              x: [0, -1000],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear",
+              },
+            }}
+          >
+            {sponsors.concat(sponsors).map((sponsor, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center min-w-fit"
+              >
+                <span className="text-secondary/40 hover:text-secondary transition-colors duration-300 font-family-SatoshiBold text-xl md:text-2xl lg:text-3xl whitespace-nowrap cursor-pointer">
+                  {sponsor}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Second set of sponsors for seamless loop */}
+          <motion.div
+            className="flex gap-12 md:gap-16 lg:gap-20 pr-12 md:pr-16 lg:pr-20"
+            animate={{
+              x: [0, -1000],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear",
+              },
+            }}
+          >
+            {sponsors.concat(sponsors).map((sponsor, index) => (
+              <div
+                key={`duplicate-${index}`}
+                className="flex items-center justify-center min-w-fit"
+              >
+                <span className="text-secondary/40 hover:text-secondary transition-colors duration-300 font-family-SatoshiBold text-xl md:text-2xl lg:text-3xl whitespace-nowrap cursor-pointer">
+                  {sponsor}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }

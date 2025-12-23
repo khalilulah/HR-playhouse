@@ -46,6 +46,7 @@ function ConnectComponent() {
 
   return (
     <div
+      id="contact-us"
       ref={sectionRef}
       className="flex flex-col font-family-RoobertMedium lg:flex-row gap-8 max-w-400 px-4 sm:px-6 lg:px-8 m-auto py-12 overflow-hidden"
     >

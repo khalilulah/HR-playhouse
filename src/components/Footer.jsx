@@ -12,10 +12,7 @@ function Footer() {
   }, []);
 
   return (
-    <div
-      id="contact-us"
-      className="text-secondary text-base sm:text-lg flex flex-col justify-between border-t-amber-50 font-family-SatoshiMedium max-w-400 b px-4 sm:px-6 lg:px-8 m-auto py-8 md:py-12"
-    >
+    <div className="text-secondary text-base sm:text-lg flex flex-col justify-between border-t-amber-50 font-family-SatoshiMedium max-w-400 b px-4 sm:px-6 lg:px-8 m-auto py-8 md:py-12">
       <div className="flex flex-col my-auto lg:flex-row gap-10 lg:gap-0 mb-3">
         {/* Links Section */}
         <div className="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">

@@ -1,20 +1,44 @@
 import { Menu, X, ChevronDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/images/Logo.svg";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Logo from "../assets/images/HrPlayhouseHublogo.jpeg";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isScrolled, setIsScrolled] = useState(window.scrollY > 10);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleContactClick = (e) => {
     e.preventDefault();
-    const contactSection = document.getElementById("contact-us");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      setOpen(false);
+    setOpen(false);
+
+    // Check if we're already on the home page
+    if (location.pathname === "/") {
+      // If on home page, just scroll to the contact section
+      const contactSection = document.getElementById("contact-us");
+      if (contactSection) {
+        const offsetTop = contactSection.offsetTop - 80; // Account for navbar height
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      // If on another page, navigate to home first, then scroll
+      navigate("/");
+      // Use setTimeout to wait for navigation and DOM render
+      setTimeout(() => {
+        const contactSection = document.getElementById("contact-us");
+        if (contactSection) {
+          const offsetTop = contactSection.offsetTop - 80; // Account for navbar height
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
+      }, 300);
     }
   };
 
@@ -81,11 +105,7 @@ function Navbar() {
           <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
             <div className="flex items-center space-x-4.5 lg:space-x-10 cursor-pointer">
               <Link to="/">
-                <img
-                  src={Logo}
-                  alt="logo"
-                  className=" w-7.5 lg:w-9 h-7.5 lg:h-9"
-                />
+                <img src={Logo} alt="logo" className="w-10 h-10 rounded-full" />
               </Link>
               {/* Desktop Links */}
               <div className="hidden space-x-4 lg:space-x-10 md:flex text-primary-text">
