@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Solutions1 from "../assets/images/Solutions1.png";
-import Solutions2 from "../assets/images/Solutions2.png";
+import Solutions1 from "../assets/images/Solutions1.webp";
+import Solutions2 from "../assets/images/Solutions2.webp";
 import Solutions3 from "../assets/images/Solutions3.png";
 import Solutions4 from "../assets/images/Solutions4.png";
 import Solutions5 from "../assets/images/Solutions5.png";

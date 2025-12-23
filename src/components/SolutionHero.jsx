@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Femme1 from "../assets/images/Femme1.png";
-import Femme2 from "../assets/images/Femme2.png";
+import Femme1 from "../assets/images/Femme1.webp";
+import Femme2 from "../assets/images/Femme2.webp";
 
 function SolutionHero() {
   const [isLoaded, setIsLoaded] = useState(false);
