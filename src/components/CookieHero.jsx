@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Cookie2 from "../assets/images/Cookie2.png";
-import Cookie from "../assets/images/CookieImg.png";
+import Cookie2 from "../assets/images/Cookie2.webp";
+import Cookie from "../assets/images/CookieImg.webp";
 
 function CookieHero() {
   const [isLoaded, setIsLoaded] = useState(false);

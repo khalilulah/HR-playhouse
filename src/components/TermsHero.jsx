@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import TermsImg from "../assets/images/TermsImg.png";
-import TermsImg2 from "../assets/images/TermsImg2.png";
+import TermsImg from "../assets/images/TermsImg.webp";
+import TermsImg2 from "../assets/images/TermsImg2.webp";
 
 function TermsHero() {
   const [isLoaded, setIsLoaded] = useState(false);

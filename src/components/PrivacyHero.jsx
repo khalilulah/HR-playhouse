@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import PrivacyAfro from "../assets/images/PrivacyAfro.png";
-import PrivacyAfro2 from "../assets/images/PrivacyAfro2.png";
+import PrivacyAfro from "../assets/images/PrivacyAfro.webp";
+import PrivacyAfro2 from "../assets/images/PrivacyAfro2.webp";
 
 function PrivacyHero() {
   const [isLoaded, setIsLoaded] = useState(false);
