@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Resource1 from "../assets/images/Resource1.png";
-import Resource2 from "../assets/images/Resource2.png";
-import Resource3 from "../assets/images/Resource3.png";
+import Resource1 from "../assets/images/Resource1.webp";
+import Resource2 from "../assets/images/Resource2.webp";
+import Resource3 from "../assets/images/Resource3.webp";
 
 function ResourceList() {
   const [visibleCards, setVisibleCards] = useState([]);

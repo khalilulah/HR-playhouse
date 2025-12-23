@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Freepik1 from "../assets/images/Freepik1.png";
-import Freepik2 from "../assets/images/Freepik2.png";
+import Freepik1 from "../assets/images/Freepik1.webp";
+import Freepik2 from "../assets/images/Freepik2.webp";
 
 function ResourceHero() {
   const [isLoaded, setIsLoaded] = useState(false);
