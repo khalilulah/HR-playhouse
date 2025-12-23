@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CaseImg1 from "../assets/images/CaseImg1.png";
-import CaseImg2 from "../assets/images/CaseImg2.png";
+import CaseImg1 from "../assets/images/CaseImg1.webp";
+import CaseImg2 from "../assets/images/CaseImg2.webp";
 
 function CaseHero() {
   const [isLoaded, setIsLoaded] = useState(false);

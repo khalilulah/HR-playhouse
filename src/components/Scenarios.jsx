@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import ScenarioImg from "../assets/images/ScenarioImg.png";
-import ScenarioImg2 from "../assets/images/ScenarioImg2.png";
-import ScenarioImg3 from "../assets/images/ScenarioImg3.png";
-import ScenarioImg4 from "../assets/images/ScenarioImg4.png";
-import ScenarioImg5 from "../assets/images/ScenarioImg5.png";
+import ScenarioImg from "../assets/images/ScenarioImg.webp";
+import ScenarioImg2 from "../assets/images/ScenarioImg2.webp";
+import ScenarioImg3 from "../assets/images/ScenarioImg3.webp";
+import ScenarioImg4 from "../assets/images/ScenarioImg4.webp";
+import ScenarioImg5 from "../assets/images/ScenarioImg5.webp";
 
 export default function DataCards() {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -106,7 +106,7 @@ export default function DataCards() {
                 <img
                   src={item.image}
                   alt={item.heading}
-                  className="w-full h-100 rounded-lg object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-100 rounded-lg object-cover transition-transform duration-500"
                 />
               </div>
 
