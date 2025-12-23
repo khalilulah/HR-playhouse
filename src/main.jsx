@@ -1,37 +1,54 @@
-import { StrictMode } from "react";
+import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
-import Home from "./pages/Home.jsx";
-import About from "./pages/AboutPage.jsx";
-import Privacy from "./pages/PrivacyPage.jsx";
-import Terms from "./pages/TermsAndConditions.jsx";
-import Cookie from "./pages/Cookie.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-import CaseStudies from "./pages/CaseStudies.jsx";
-import Solutions from "./pages/Solutions.jsx";
-import Resources from "./pages/Resources.jsx";
-import Login from "./pages/LoginPage.jsx";
-import SignUpPage from "./pages/SignUpPage.jsx";
+
+// Lazy load all page components
+const Home = lazy(() => import("./pages/Home.jsx"));
+const About = lazy(() => import("./pages/AboutPage.jsx"));
+const Privacy = lazy(() => import("./pages/PrivacyPage.jsx"));
+const Terms = lazy(() => import("./pages/TermsAndConditions.jsx"));
+const Cookie = lazy(() => import("./pages/Cookie.jsx"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies.jsx"));
+const Solutions = lazy(() => import("./pages/Solutions.jsx"));
+const Resources = lazy(() => import("./pages/Resources.jsx"));
+const Login = lazy(() => import("./pages/LoginPage.jsx"));
+const SignUpPage = lazy(() => import("./pages/SignUpPage.jsx"));
+
+// Loading component
+const LoadingFallback = () => (
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+    }}
+  >
+    Loading...
+  </div>
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Add more routes here */}
-        <Route path="/about" element={<About />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/cookie" element={<Cookie />} />
-        <Route path="/case" element={<CaseStudies />} />
-        <Route path="/solutions" element={<Solutions />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUpPage />} />
-      </Routes>
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookie" element={<Cookie />} />
+          <Route path="/case" element={<CaseStudies />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUpPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   </StrictMode>
 );
