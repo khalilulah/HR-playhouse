@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import img from "../assets/images/AboutGroup.png";
+import img from "../assets/images/AboutGroup.webp";
 
 function Mission() {
   const [isVisible, setIsVisible] = useState(false);

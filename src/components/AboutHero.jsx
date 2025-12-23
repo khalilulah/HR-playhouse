@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import img from "../assets/images/GroupTest.png";
+import img from "../assets/images/GroupTest.webp";
 
 function AboutHero() {
   const [isLoaded, setIsLoaded] = useState(false);
