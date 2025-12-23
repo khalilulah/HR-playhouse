@@ -1,15 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import HomeHero1 from "../assets/images/Aundre.png";
-import HomeHero2 from "../assets/images/Van.png";
-import HomeHero3 from "../assets/images/Curly.png";
-import HomeHero4 from "../assets/images/Proesc.png";
 import { Link } from "react-router-dom";
 
 function HomeHero() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef(null);
+  const [imagesLoaded, setImagesLoaded] = useState({
+    hero1: false,
+    hero2: false,
+    hero3: false,
+    hero4: false,
+  });
+
+  // Lazy load images
+  const [imageSrcs, setImageSrcs] = useState({
+    hero1: null,
+    hero2: null,
+    hero3: null,
+    hero4: null,
+  });
+
+  useEffect(() => {
+    // Dynamically import images when component mounts
+    Promise.all([
+      import("../assets/images/Aundre.png"),
+      import("../assets/images/Van.png"),
+      import("../assets/images/Curly.png"),
+      import("../assets/images/Proesc.png"),
+    ]).then(([img1, img2, img3, img4]) => {
+      setImageSrcs({
+        hero1: img1.default,
+        hero2: img2.default,
+        hero3: img3.default,
+        hero4: img4.default,
+      });
+    });
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,7 +63,7 @@ function HomeHero() {
     offset: ["center center", "start end"],
   });
 
-  // Sponsor logos data (replace with your actual sponsor names/logos)
+  // Sponsor logos data
   const sponsors = [
     "Microsoft",
     "Google",
@@ -49,6 +76,11 @@ function HomeHero() {
     "Salesforce",
     "Adobe",
   ];
+
+  // Helper function to handle image load
+  const handleImageLoad = (imageKey) => {
+    setImagesLoaded((prev) => ({ ...prev, [imageKey]: true }));
+  };
 
   return (
     <section
@@ -70,8 +102,13 @@ function HomeHero() {
       <div className="w-full hidden md:flex justify-center my-5">
         <motion.div
           ref={cardRef}
-          className="w-60 h-60 xl:w-70 xl:h-70 bg-cover hover:z-10 mt-10 rounded-3xl shadow-2xl hover:shadow-3xl"
-          style={{ backgroundImage: `url(${HomeHero1})` }}
+          className="w-60 h-60 xl:w-70 xl:h-70 bg-cover hover:z-10 mt-10 rounded-3xl shadow-2xl hover:shadow-3xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero1
+              ? `url(${imageSrcs.hero1})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero1 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, x: -100, rotateY: -20 }}
           animate={
             isVisible
@@ -80,10 +117,25 @@ function HomeHero() {
           }
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           whileHover={{ scale: 1.05, rotateY: 5 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero1 && (
+            <img
+              src={imageSrcs.hero1}
+              alt="Hero 1"
+              loading="lazy"
+              onLoad={() => handleImageLoad("hero1")}
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
         <motion.div
-          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 rounded-3xl shadow-2xl hover:shadow-3xl"
-          style={{ backgroundImage: `url(${HomeHero2})` }}
+          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 rounded-3xl shadow-2xl hover:shadow-3xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero2
+              ? `url(${imageSrcs.hero2})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero2 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, y: -100, scale: 0.9 }}
           animate={
             isVisible
@@ -92,10 +144,25 @@ function HomeHero() {
           }
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           whileHover={{ scale: 1.05, y: -10 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero2 && (
+            <img
+              src={imageSrcs.hero2}
+              alt="Hero 2"
+              loading="lazy"
+              onLoad={() => handleImageLoad("hero2")}
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
         <motion.div
-          className="w-60 h-60 xl:w-70 xl:h-70 mt-10 -ml-16 xl:-ml-20 bg-cover hover:z-10 rounded-3xl shadow-2xl hover:shadow-3xl"
-          style={{ backgroundImage: `url(${HomeHero3})` }}
+          className="w-60 h-60 xl:w-70 xl:h-70 mt-10 -ml-16 xl:-ml-20 bg-cover hover:z-10 rounded-3xl shadow-2xl hover:shadow-3xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero3
+              ? `url(${imageSrcs.hero3})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero3 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, x: 100, rotateY: 20 }}
           animate={
             isVisible
@@ -104,10 +171,25 @@ function HomeHero() {
           }
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           whileHover={{ scale: 1.05, rotateY: -5 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero3 && (
+            <img
+              src={imageSrcs.hero3}
+              alt="Hero 3"
+              loading="lazy"
+              onLoad={() => handleImageLoad("hero3")}
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
         <motion.div
-          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 rounded-3xl shadow-2xl hover:shadow-3xl"
-          style={{ backgroundImage: `url(${HomeHero4})` }}
+          className="w-60 h-60 xl:w-70 xl:h-70 -ml-16 xl:-ml-20 bg-cover hover:z-10 rounded-3xl shadow-2xl hover:shadow-3xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero4
+              ? `url(${imageSrcs.hero4})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero4 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, y: 100, scale: 0.9 }}
           animate={
             isVisible
@@ -116,14 +198,29 @@ function HomeHero() {
           }
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           whileHover={{ scale: 1.05, y: 10 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero4 && (
+            <img
+              src={imageSrcs.hero4}
+              alt="Hero 4"
+              loading="lazy"
+              onLoad={() => handleImageLoad("hero4")}
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
       </div>
 
       {/* Mobile/Tablet Grid - Shown on smaller screens with animations */}
       <div className="w-full grid grid-cols-2 gap-4 md:gap-6 md:hidden my-6">
         <motion.div
-          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl"
-          style={{ backgroundImage: `url(${HomeHero1})` }}
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero1
+              ? `url(${imageSrcs.hero1})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero1 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, scale: 0.8, rotateZ: -10 }}
           animate={
             isVisible
@@ -133,10 +230,24 @@ function HomeHero() {
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero1 && (
+            <img
+              src={imageSrcs.hero1}
+              alt="Hero 1"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
         <motion.div
-          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl"
-          style={{ backgroundImage: `url(${HomeHero2})` }}
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero2
+              ? `url(${imageSrcs.hero2})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero2 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, scale: 0.8, rotateZ: 10 }}
           animate={
             isVisible
@@ -146,10 +257,24 @@ function HomeHero() {
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero2 && (
+            <img
+              src={imageSrcs.hero2}
+              alt="Hero 2"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
         <motion.div
-          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl"
-          style={{ backgroundImage: `url(${HomeHero3})` }}
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero3
+              ? `url(${imageSrcs.hero3})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero3 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, scale: 0.8, rotateZ: 10 }}
           animate={
             isVisible
@@ -159,10 +284,24 @@ function HomeHero() {
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero3 && (
+            <img
+              src={imageSrcs.hero3}
+              alt="Hero 3"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
         <motion.div
-          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl"
-          style={{ backgroundImage: `url(${HomeHero4})` }}
+          className="aspect-square bg-cover bg-center rounded-2xl shadow-xl relative overflow-hidden"
+          style={{
+            backgroundImage: imageSrcs.hero4
+              ? `url(${imageSrcs.hero4})`
+              : "none",
+            backgroundColor: !imagesLoaded.hero4 ? "#e5e7eb" : "transparent",
+          }}
           initial={{ opacity: 0, scale: 0.8, rotateZ: -10 }}
           animate={
             isVisible
@@ -172,7 +311,16 @@ function HomeHero() {
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-        ></motion.div>
+        >
+          {imageSrcs.hero4 && (
+            <img
+              src={imageSrcs.hero4}
+              alt="Hero 4"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover opacity-0"
+            />
+          )}
+        </motion.div>
       </div>
 
       {/* Text and Buttons */}

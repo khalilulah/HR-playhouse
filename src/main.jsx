@@ -17,38 +17,23 @@ const Resources = lazy(() => import("./pages/Resources.jsx"));
 const Login = lazy(() => import("./pages/LoginPage.jsx"));
 const SignUpPage = lazy(() => import("./pages/SignUpPage.jsx"));
 
-// Loading component
-const LoadingFallback = () => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-    }}
-  >
-    Loading...
-  </div>
-);
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
-      <Suspense fallback={<LoadingFallback />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/cookie" element={<Cookie />} />
-          <Route path="/case" element={<CaseStudies />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUpPage />} />
-        </Routes>
-      </Suspense>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookie" element={<Cookie />} />
+        <Route path="/case" element={<CaseStudies />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUpPage />} />
+      </Routes>
     </BrowserRouter>
   </StrictMode>
 );

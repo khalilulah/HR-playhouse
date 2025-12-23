@@ -102,6 +102,7 @@ function PrivacyHero() {
 
               <img
                 src={PrivacyAfro2}
+                loading="lazy"
                 className={`relative w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-700 ease-out ${
                   hoveredImage === 2
                     ? "scale-110 -rotate-2 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
