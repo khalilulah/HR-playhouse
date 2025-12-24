@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 function ConnectComponent() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,15 @@ function ConnectComponent() {
   });
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  const isFormValid =
+    formData.firstName &&
+    formData.lastName &&
+    formData.email &&
+    formData.message;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,10 +48,57 @@ function ConnectComponent() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Form submitted successfully!");
+
+    if (!isFormValid) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      await emailjs.send(
+        "service_276up1k",
+        "template_kw3t8bh",
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          message: formData.message,
+        },
+        "Lt28-ZKOpcZM3m8a1"
+      );
+
+      await emailjs.send(
+        "service_276up1k",
+        "template_syedpic",
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          message: formData.message,
+        },
+        "Lt28-ZKOpcZM3m8a1"
+      );
+
+      setSuccess(
+        "✅ Your message has been received. We’ll get back to you soon."
+      );
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+    } catch (err) {
+      setError("❌ Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -147,17 +204,21 @@ function ConnectComponent() {
               className="w-full px-4 py-3 rounded-lg border-2 border-[#D7D7D7] bg-[#F6F6F6] focus:border-gray-400 focus:outline-none transition-colors resize-none"
             />
           </div>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {success && <p className="text-green-600 text-sm">{success}</p>}
 
           <button
             onClick={handleSubmit}
-            className={`w-full bg-secondary text-primary font-semibold px-6 py-3 rounded-4xl hover:text-secondary hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
-            }`}
-            style={{ transitionDelay: "800ms" }}
+            disabled={!isFormValid || loading}
+            className={`w-full font-semibold px-6 py-3 rounded-4xl transition-all duration-300
+    ${
+      !isFormValid || loading
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-secondary text-primary hover:text-secondary hover:bg-gray-100"
+    }
+  `}
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </div>
       </div>
