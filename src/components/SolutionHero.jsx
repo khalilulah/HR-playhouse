@@ -15,9 +15,9 @@ function SolutionHero() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] h-screen  md:mt-0 overflow-hidden">
+    <div className="mx-auto  py-0 max-w-400 h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] overflow-hidden">
       {/* Text Section */}
-      <div className="w-full xl:w-1/2 text-center xl:text-left">
+      <div className="w-full xl:w-1/2 text-center  xl:text-left">
         <p
           className={`font-family-Roobert mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-secondary leading-tight transition-all duration-1000 ease-out ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
