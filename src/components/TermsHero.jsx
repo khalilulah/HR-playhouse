@@ -15,7 +15,7 @@ function TermsHero() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] overflow-hidden">
+    <div className="mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[2rem] md:pb-[2.5rem] overflow-hidden">
       {/* Text Section */}
       <div className="w-full xl:w-1/2 text-center xl:text-left">
         <p
