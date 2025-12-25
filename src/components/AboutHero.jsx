@@ -3,6 +3,24 @@ import img from "../assets/images/GroupTest.webp";
 
 function AboutHero() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLargeHeight, setIsLargeHeight] = useState(window.innerHeight > 790);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      console.log(window.innerHeight);
+
+      setIsLargeHeight(window.innerHeight > 790);
+    };
+
+    // Check on mount
+    checkHeight();
+
+    // Check on resize
+    window.addEventListener("resize", checkHeight);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkHeight);
+  }, [isLargeHeight]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -12,8 +30,13 @@ function AboutHero() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[2rem] md:pb-[2.5rem]  md:mt-0">
-      {/* Text Section */}
+    <div
+      className={`mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] overflow-hidden ${
+        isLargeHeight
+          ? "h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[5rem]"
+          : "sm:h-auto my-12 md:my-16 lg:my-20 py-3"
+      }`}
+    >
       <div className="w-full xl:w-1/2 text-center xl:text-left">
         <p
           className={`font-family-Roobert mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-secondary leading-tight transition-all duration-1000 ease-out ${

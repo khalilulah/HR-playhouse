@@ -5,7 +5,7 @@ import Freepik2 from "../assets/images/Freepik2.webp";
 function ResourceHero() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hoveredImage, setHoveredImage] = useState(null);
-  const [isLargeHeight, setIsLargeHeight] = useState(window.innerHeight > 570);
+  const [isLargeHeight, setIsLargeHeight] = useState(window.innerHeight > 700);
 
   useEffect(() => {
     const checkHeight = () => {

@@ -6,6 +6,25 @@ function TermsHero() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hoveredImage, setHoveredImage] = useState(null);
 
+  const [isLargeHeight, setIsLargeHeight] = useState(window.innerHeight > 700);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      console.log(window.innerHeight);
+
+      setIsLargeHeight(window.innerHeight > 700);
+    };
+
+    // Check on mount
+    checkHeight();
+
+    // Check on resize
+    window.addEventListener("resize", checkHeight);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkHeight);
+  }, [isLargeHeight]);
+
   useEffect(() => {
     // Trigger animations after component mounts
     const timer = setTimeout(() => {
@@ -15,7 +34,13 @@ function TermsHero() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[2rem] md:pb-[2.5rem] overflow-hidden">
+    <div
+      className={`mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] overflow-hidden ${
+        isLargeHeight
+          ? "h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[5rem]"
+          : "sm:h-auto my-12 md:my-16 lg:my-20 py-3"
+      }`}
+    >
       {/* Text Section */}
       <div className="w-full xl:w-1/2 text-center xl:text-left">
         <p
