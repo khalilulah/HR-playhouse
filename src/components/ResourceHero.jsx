@@ -9,7 +9,9 @@ function ResourceHero() {
 
   useEffect(() => {
     const checkHeight = () => {
-      setIsLargeHeight(window.innerHeight < 57);
+      console.log(window.innerHeight);
+
+      setIsLargeHeight(window.innerHeight > 630);
     };
 
     // Check on mount
