@@ -36,7 +36,7 @@ function ResourceHero() {
     <div
       className={`mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] overflow-hidden ${
         isLargeHeight
-          ? "h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[3rem]"
+          ? "h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[5rem]"
           : "sm:h-auto my-12 md:my-16 lg:my-20 py-3"
       }`}
     >
