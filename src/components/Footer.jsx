@@ -25,18 +25,10 @@ function Footer() {
           >
             <b className="text-lg md:text-xl">Platform</b>
             <div className="mt-3 space-y-2 md:space-y-3 text-sm md:text-base">
-              <p className="hover:opacity-70 hover:translate-x-1 cursor-pointer transition-all duration-300">
-                Gamified Learning
-              </p>
-              <p className="hover:opacity-70 hover:translate-x-1 cursor-pointer transition-all duration-300">
-                AI Support
-              </p>
-              <p className="hover:opacity-70 hover:translate-x-1 cursor-pointer transition-all duration-300">
-                Innovation Lab
-              </p>
-              <p className="hover:opacity-70 hover:translate-x-1 cursor-pointer transition-all duration-300">
-                Case Study Vault
-              </p>
+              <p className="">Gamified Learning</p>
+              <p className="">AI Support</p>
+              <p className="">Innovation Lab</p>
+              <p className="">Case Study Vault</p>
             </div>
           </div>
           <div
@@ -110,7 +102,7 @@ function Footer() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight">
             HR <br /> Playhouse <br /> Hub
           </h2>
-          <div className="text-sm md:text-base space-y-2">
+          <div className="text-sm md:text-base font-bold space-y-2">
             <p>
               Africa's #1 HR Innovation Platform. Bridging the gap between
               academic theory and practical execution.

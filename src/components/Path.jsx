@@ -37,7 +37,7 @@ function Path() {
   }, []);
 
   return (
-    <div className="max-w-400 m-auto px-4 sm:px-6 lg:px-8 my-12 md:my-20 lg:my-32">
+    <div className="max-w-400 m-auto px-4 sm:px-6 lg:px-8 mt-24 my-12 md:my-20 lg:my-32">
       {/* heading */}
       <div className="relative z-10">
         <div className="mb-8 md:mb-12 lg:mb-16">
@@ -71,11 +71,11 @@ function Path() {
               <img
                 src={Brand1}
                 alt="Learn & Play"
-                className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
+                className="w-full h-54 sm:h-80 md:h-96 lg:h-100 rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
             </div>
 
-            <div className="w-full lg:w-[45%] flex items-center">
+            <div className="w-full lg:w-[45%] flex">
               <div className="w-full">
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 1: Learn & Play
@@ -103,11 +103,11 @@ function Path() {
               <img
                 src={Brand2}
                 alt="Apply & Optimize"
-                className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
+                className="w-full h-54 sm:h-80 md:h-96 lg:h-100  rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
             </div>
 
-            <div className="w-full lg:w-[45%] flex items-center">
+            <div className="w-full lg:w-[45%] flex">
               <div className="w-full">
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 2: Apply & Optimize
@@ -135,11 +135,11 @@ function Path() {
               <img
                 src={Brand3}
                 alt="Solve & Innovate"
-                className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
+                className="w-full h-54 sm:h-80 md:h-96 lg:h-100  rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
             </div>
 
-            <div className="w-full lg:w-[45%] flex items-center">
+            <div className="w-full lg:w-[45%] flex ">
               <div className="w-full">
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 3: Solve & Innovate
@@ -167,11 +167,11 @@ function Path() {
               <img
                 src={Brand4}
                 alt="Achieve & Ascend"
-                className="w-full h-64 sm:h-80 md:h-96 lg:h-100 xl:h-116 rounded-xl md:rounded-2xl object-cover bg-secondary"
+                className="w-full h-54 sm:h-80 md:h-96 lg:h-100 rounded-xl md:rounded-2xl object-cover bg-secondary"
               />
             </div>
 
-            <div className="w-full lg:w-[45%] flex items-center">
+            <div className="w-full lg:w-[45%] flex ">
               <div className="w-full">
                 <p className="font-family-Roobert mb-3 md:mb-4 text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   Step 4: Achieve & Ascend

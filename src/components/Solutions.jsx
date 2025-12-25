@@ -118,7 +118,9 @@ function Solutions() {
           Learn more
         </Link>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+
+      {/* SMALL SCREEN */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden lg:grid-cols-3 gap-4 w-full">
         {cardData.slice(0, 4).map((card) => (
           <div
             key={card.id}
@@ -234,6 +236,133 @@ function Solutions() {
             }`}
           ></div>
         </div>
+      </div>
+
+      {/* LARGE SCREEN */}
+
+      <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-4">
+        {cardData.slice(0, 3).map((card) => (
+          <div
+            key={card.id}
+            className={`bg-secondary bg-cover h-96 rounded-[10px] flex flex-col justify-end text-white p-5 transition-all duration-700 ${
+              card.delay
+            } relative overflow-hidden group ${
+              isVisible
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-10 scale-95"
+            }`}
+            style={{
+              backgroundImage: `url(${card.image})`,
+            }}
+            onMouseEnter={() => setHoveredCard(card.id)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            {/* Animated overlay gradient */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent transition-all duration-500 ${
+                hoveredCard === card.id ? "from-black/70 via-black/30" : ""
+              }`}
+            ></div>
+
+            {/* Animated shine effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </div>
+
+            {/* Content */}
+            <div
+              className={`relative z-10 transform transition-all duration-500 ${
+                hoveredCard === card.id ? "translate-y-[-8px]" : ""
+              }`}
+            >
+              <p
+                className={`font-bold text-base sm:text-lg md:text-xl mb-2 transition-all duration-300 ${
+                  hoveredCard === card.id ? "text-white" : ""
+                }`}
+              >
+                {card.title}
+              </p>
+              <p
+                className={`text-base sm:text-lg transition-all duration-500 ${
+                  hoveredCard === card.id
+                    ? "opacity-100 max-h-40"
+                    : "opacity-90 max-h-32"
+                }`}
+              >
+                {card.description}
+              </p>
+            </div>
+
+            {/* Hover border effect */}
+            <div
+              className={`absolute inset-0 rounded-[10px] border-2 border-white/0 transition-all duration-300 ${
+                hoveredCard === card.id ? "border-white/20" : ""
+              }`}
+            ></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom 2 cards - each taking half width on lg+ */}
+      <div className="hidden lg:grid  grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        {cardData.slice(3, 5).map((card) => (
+          <div
+            key={card.id}
+            className={`bg-secondary text-xl bg-cover bg-center h-96 rounded-[10px] flex flex-col justify-end text-white p-5 transition-all duration-700 ${
+              card.delay
+            } cursor-pointer relative overflow-hidden group ${
+              isVisible
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-10 scale-95"
+            }`}
+            style={{
+              backgroundImage: `url(${card.image})`,
+            }}
+            onMouseEnter={() => setHoveredCard(card.id)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            {/* Animated overlay gradient */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent transition-all duration-500 ${
+                hoveredCard === card.id ? "from-black/70 via-black/30" : ""
+              }`}
+            ></div>
+
+            {/* Animated shine effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </div>
+
+            {/* Content */}
+            <div
+              className={`relative z-10 transform transition-all duration-500 ${
+                hoveredCard === card.id ? "translate-y-[-8px]" : ""
+              }`}
+            >
+              <p
+                className={`font-bold text-base sm:text-lg md:text-xl mb-2 transition-all duration-300 ${
+                  hoveredCard === card.id ? "text-white" : ""
+                }`}
+              >
+                {card.title}
+              </p>
+              <p
+                className={`text-base sm:text-lg transition-all duration-500 ${
+                  hoveredCard === card.id ? "opacity-100" : "opacity-90"
+                }`}
+              >
+                {card.description}
+              </p>
+            </div>
+
+            {/* Hover border effect */}
+            <div
+              className={`absolute inset-0 rounded-[10px] border-2 border-white/0 transition-all duration-300 ${
+                hoveredCard === card.id ? "border-white/20" : ""
+              }`}
+            ></div>
+          </div>
+        ))}
       </div>
     </div>
   );

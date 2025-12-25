@@ -38,7 +38,7 @@ function Different() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
         <div
-          className={`bg-secondary bg-cover bg-center h-86 rounded-[10px] flex flex-col justify-end text-xl text-primary p-5 transition-all duration-700 delay-100 hover:shadow-2xl ${
+          className={`bg-secondary bg-cover bg-center h-86 rounded-[10px] flex flex-col justify-end text-xl text-primary p-5 transition-all duration-700 delay-100 hover:shadow-2xl hover:-translate-y-2 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
           style={{
@@ -46,15 +46,16 @@ function Different() {
           }}
         >
           <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl">
-            Innovation Lab
+            AI-Powered Support
           </p>
           <p className="text-base sm:text-lg">
-            Collaborate on real-world HR challenges. Join project rooms, find
-            mentors, and solve actual industry problems with peers.
+            Our personal HR assistant is always on. Upload your CVs, policies,
+            or memos, and get instant, AI-driven feedback to optimize your work
+            and ensure compliance.
           </p>
         </div>
         <div
-          className={`bg-secondary text-xl bg-cover h-86 rounded-[10px] flex flex-col justify-end text-primary p-5 transition-all duration-700 delay-200 hover:shadow-2xl ${
+          className={`bg-secondary text-xl bg-cover h-86 rounded-[10px] flex flex-col justify-end text-primary p-5 transition-all duration-700 delay-200 hover:shadow-2xl hover:-translate-y-2 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
           style={{
@@ -65,13 +66,14 @@ function Different() {
             Gamified Learning
           </p>
           <p className="text-base sm:text-lg">
-            Engage in interactive, scenario-based learning. Earn XP, badges, and
-            track your progress as you master HR skills.
+            We replaced long lectures with interactive scenarios. Engage in
+            challenges, earn badges, and track your XP as you master complex HR
+            concepts in a fun, risk-free environment.
           </p>
         </div>
 
         <div
-          className={`bg-secondary text-xl bg-cover h-86 rounded-[10px] col-span-1 md:col-span-2 flex flex-col justify-end text-primary p-5 transition-all duration-700 delay-300 hover:shadow-2xl ${
+          className={`bg-secondary text-xl bg-cover h-86 rounded-[10px] col-span-1 md:col-span-2 flex flex-col justify-end text-primary p-5 transition-all duration-700 delay-300 hover:shadow-2xl hover:-translate-y-2 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
           style={{
@@ -80,11 +82,12 @@ function Different() {
         >
           <div className="md:w-150">
             <p className="font-family-SatoshiBold text-base sm:text-lg md:text-xl mb-2">
-              Everyday HR Playbook
+              Real-World Innovation
             </p>
             <p className="text-base sm:text-lg">
-              Your daily toolkit. Access daily tips, micro-learning streaks, and
-              ready-to-use templates for your immediate work needs.
+              Theory isn't enough. Our Innovation Lab lets you collaborate with
+              peers and mentors to solve actual industry problems, giving you
+              the practical experience employers demand.
             </p>
           </div>
         </div>

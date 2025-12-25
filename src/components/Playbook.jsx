@@ -90,7 +90,7 @@ function Playbook() {
             <img
               src={Office}
               alt="image"
-              className="rounded-xl w-full h-auto object-cover"
+              className="rounded-xl w-full h-auto object-cover hover:scale-102 transition-transform duration-500"
             />
             <div className="my-5 flex-grow">
               <p className="font-family-Roobert text-2xl md:text-3xl mb-2">
@@ -101,7 +101,7 @@ function Playbook() {
               </p>
             </div>
             <Link
-              to="/solutions"
+              to="/resources"
               className="px-5 py-2 border hover:cursor-pointer rounded-4xl border-seconday-text hover:bg-seconday-text hover:text-secondary transition-colors w-fit"
             >
               Learn more
@@ -119,7 +119,7 @@ function Playbook() {
             <img
               src={Office2}
               alt="image"
-              className="rounded-xl w-full h-auto object-cover"
+              className="rounded-xl w-full h-auto object-cover hover:scale-102 transition-transform duration-500"
             />
             <div className="my-5 flex-grow">
               <p className="font-family-Roobert text-2xl md:text-3xl mb-2">
@@ -131,7 +131,7 @@ function Playbook() {
               </p>
             </div>
             <Link
-              to="/solutions"
+              to="/resources"
               className="px-5 py-2 border hover:cursor-pointer rounded-4xl border-seconday-text hover:bg-seconday-text hover:text-secondary transition-colors w-fit"
             >
               Learn more
@@ -149,7 +149,7 @@ function Playbook() {
             <img
               src={Office3}
               alt="image"
-              className="rounded-xl w-full h-auto object-cover"
+              className="rounded-xl w-full h-auto object-cover hover:scale-102 transition-transform duration-500"
             />
             <div className="my-5 flex-grow">
               <p className="font-family-Roobert text-2xl md:text-3xl mb-2">
@@ -161,7 +161,7 @@ function Playbook() {
               </p>
             </div>
             <Link
-              to="/solutions"
+              to="/resources"
               className="px-5 py-2 border hover:cursor-pointer rounded-4xl border-seconday-text hover:bg-seconday-text hover:text-secondary transition-colors w-fit"
             >
               Learn more

@@ -71,11 +71,14 @@ function Mission() {
             }`}
           >
             <span className="font-bold text-secondary">Our Vision:</span> To
-            successfully bridge the gap between traditional academia and the
-            modern workforce. By delivering immersive, simulation-based
-            learning, we equip HR professionals with the practical skills needed
-            to thrive in real-world scenarios, moving beyond textbook theory to
-            actionable mastery.
+            shape the future of the HR profession by building a dynamic,
+            continuously evolving learning ecosystem where HR professionals grow
+            through experience, innovation, and collaboration. We envision a
+            world where HR talent is developed through real-world practice,
+            intelligent technology, and community-driven learning empowering
+            professionals at every career stage to lead with confidence, think
+            strategically, and create meaningful impact within their
+            organisations.
           </p>
         </div>
       </div>
