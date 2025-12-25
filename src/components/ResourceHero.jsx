@@ -5,11 +5,11 @@ import Freepik2 from "../assets/images/Freepik2.webp";
 function ResourceHero() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hoveredImage, setHoveredImage] = useState(null);
-  const [isLargeHeight, setIsLargeHeight] = useState(true);
+  const [isLargeHeight, setIsLargeHeight] = useState(window.innerHeight > 570);
 
   useEffect(() => {
     const checkHeight = () => {
-      setIsLargeHeight(window.innerHeight > 570);
+      setIsLargeHeight(window.innerHeight < 57);
     };
 
     // Check on mount
@@ -20,7 +20,7 @@ function ResourceHero() {
 
     // Cleanup
     return () => window.removeEventListener("resize", checkHeight);
-  }, []);
+  }, [isLargeHeight]);
 
   useEffect(() => {
     // Trigger animations after component mounts
@@ -32,7 +32,7 @@ function ResourceHero() {
 
   return (
     <div
-      className={`mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] overflow-hidden${
+      className={`mx-auto max-w-400 flex justify-center flex-col xl:flex-row gap-8 lg:gap-12 xl:gap-16 items-center px-4 sm:px-6 lg:px-8 perspective-[1500px] overflow-hidden ${
         isLargeHeight
           ? "h-[calc(100vh-3.8rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] pb-[2rem] md:pb-[2.5rem]"
           : "sm:h-auto my-12 md:my-16 lg:my-20 py-3"
