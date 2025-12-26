@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
+const serviceKey = import.meta.env.VITE_SERVICE_KEY;
+const AdminTemplateKey = import.meta.env.VITE_ADMIN_TEMPLATE_KEY;
+const userTemplateKey = import.meta.env.VITE_USER_TEMPLATE_KEY;
+const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 function ConnectComponent() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -8,6 +12,8 @@ function ConnectComponent() {
     email: "",
     message: "",
   });
+  // console.log(publicKey);
+
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const [loading, setLoading] = useState(false);
@@ -62,27 +68,27 @@ function ConnectComponent() {
 
     try {
       await emailjs.send(
-        "service_276up1k",
-        "template_kw3t8bh",
+        import.meta.env.VITE_SERVICE_KEY,
+        import.meta.env.VITE_USER_TEMPLATE_KEY,
         {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           message: formData.message,
         },
-        "Lt28-ZKOpcZM3m8a1"
+        import.meta.env.VITE_PUBLIC_KEY
       );
 
       await emailjs.send(
-        "service_276up1k",
-        "template_syedpic",
+        import.meta.env.VITE_SERVICE_KEY,
+        import.meta.env.VITE_ADMIN_TEMPLATE_KEY,
         {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           message: formData.message,
         },
-        "Lt28-ZKOpcZM3m8a1"
+        import.meta.env.VITE_PUBLIC_KEY
       );
 
       setSuccess(
