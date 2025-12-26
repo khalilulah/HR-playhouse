@@ -7,7 +7,7 @@ function PolicyNote() {
         <p>
           <span className="text-secondary font-bold">1. Introduction</span>{" "}
           <br />
-          Welcome to HR Playhouse Hub ("Company", "we", "our", "us"). We are
+          Welcome to The HR Playhouse Hub ("Company", "we", "our", "us"). We are
           committed to protecting your personal information and your right to
           privacy. This Privacy Policy describes how we collect, use, process,
           and safeguard your information when you visit our website, use our
@@ -63,8 +63,8 @@ function PolicyNote() {
           <div>
             <p>
               B. Content and Usage Data (Platform Specifics) Due to the
-              interactive nature of HR Playhouse Hub, we collect specific data
-              related to your learning journey:
+              interactive nature of The HR Playhouse Hub, we collect specific
+              data related to your learning journey:
             </p>
             <ul className="list-disc ml-7">
               <li>

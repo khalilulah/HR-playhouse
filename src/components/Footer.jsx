@@ -100,7 +100,7 @@ function Footer() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight">
-            HR <br /> Playhouse <br /> Hub
+            The HR <br /> Playhouse <br /> Hub
           </h2>
           <div className="text-sm md:text-base font-bold space-y-2">
             <p>
@@ -108,7 +108,7 @@ function Footer() {
               academic theory and practical execution.
             </p>
             <p className="break-words">
-              Contact@thehrplayhousehub.org • +2349064730880
+              contact@thehrplayhousehub.org • +2349064730880
             </p>
             <p>Ota Ogun State, Nigeria</p>
           </div>
@@ -121,7 +121,7 @@ function Footer() {
         }`}
       >
         <p className="text-xs sm:text-sm md:text-base">
-          © 2025 HR Playhouse Hub. All rights reserved.
+          © 2025 The HR Playhouse Hub. All rights reserved.
         </p>
         <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6">
           <a

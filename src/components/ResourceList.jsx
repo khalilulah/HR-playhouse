@@ -69,7 +69,7 @@ function ResourceList() {
                 <img
                   src={item.image}
                   alt={item.heading}
-                  className="w-full h-100 rounded-lg object-cover transition-transform duration-500"
+                  className="w-full h-100 rounded-lg object-cover transition-transform duration-500 hover:scale-101"
                 />
               </div>
 
