@@ -5,6 +5,7 @@ import Book from "../assets/images/book1.png";
 import Folder from "../assets/images/folderr.png";
 import GamePad from "../assets/images/gamepad.png";
 import Lab from "../assets/images/beaker.png";
+import { Link } from "react-router-dom";
 
 function GetStartedMap() {
   const mapData = [
@@ -15,7 +16,7 @@ function GetStartedMap() {
       heading: "Gamified Learning Modules",
       description: "Engage in interactive, scenario-based learning",
       linkText: "Start Playing",
-      href: "#",
+      href: "/signup",
     },
     {
       id: 2,
@@ -25,7 +26,7 @@ function GetStartedMap() {
       description:
         "Upload your HR documents for AI-powered feedback and insights",
       linkText: "Try Tool",
-      href: "#",
+      href: "/signup",
     },
     {
       id: 3,
@@ -34,7 +35,7 @@ function GetStartedMap() {
       heading: "Innovation Lab",
       description: "Collaborate on real-world HR challenges.",
       linkText: "Enter Lab",
-      href: "#",
+      href: "/signup",
     },
     {
       id: 4,
@@ -44,7 +45,7 @@ function GetStartedMap() {
       description:
         "Explore real-world HR cases and sharpen your decision-making skills.",
       linkText: "Open Vault",
-      href: "#",
+      href: "/signup",
     },
     {
       id: 5,
@@ -54,7 +55,7 @@ function GetStartedMap() {
       description:
         "Access daily tips and practical templates for your HR practices",
       linkText: "Access Playbook",
-      href: "#",
+      href: "/signup",
     },
   ];
 
@@ -66,11 +67,11 @@ function GetStartedMap() {
           className="flex
        flex-col items-center mb-10"
         >
-          <button className="bg-secondary-50 flex py-1 px-4 rounded-3xl text-secondary font-bold space-x-1 mb-2">
+          <button className="bg-secondary-50 flex py-1 px-4 rounded-3xl text-secondary font-bold space-x-1 ">
             <img src={Map} alt="" />
             <p>ADVENTURE MAP</p>
           </button>
-          <div>
+          <div className="my-2">
             <p className="font-family-Roobert text-2xl text-secondary md:text-4xl text-center">
               Your HR Quest Begins
             </p>
@@ -79,6 +80,18 @@ function GetStartedMap() {
               professional capabilities
             </p>
           </div>
+          <Link to="/signup">
+            <button
+              className="w-full sm:w-auto mt-4 px-5 py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm md:text-base cursor-pointer"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              SignUp
+            </button>
+          </Link>
         </div>
 
         {/* Cards Grid */}
@@ -169,8 +182,8 @@ function GetStartedMap() {
                   {item.description}
                 </p>
 
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="inline-flex items-center text-secondary font-semibold transition-colors group"
                 >
                   {item.linkText}
@@ -187,7 +200,7 @@ function GetStartedMap() {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
