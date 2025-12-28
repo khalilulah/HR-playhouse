@@ -16,6 +16,7 @@ const Solutions = lazy(() => import("./pages/Solutions.jsx"));
 const Resources = lazy(() => import("./pages/Resources.jsx"));
 const Login = lazy(() => import("./pages/LoginPage.jsx"));
 const SignUpPage = lazy(() => import("./pages/SignUpPage.jsx"));
+const GetStartedPage = lazy(() => import("./pages/GetStartedPage.jsx"));
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -33,6 +34,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/resources" element={<Resources />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/getstarted" element={<GetStartedPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

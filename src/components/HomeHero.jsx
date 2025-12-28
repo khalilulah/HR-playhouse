@@ -192,7 +192,7 @@ function HomeHero() {
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
         >
-          <Link to="/signup">
+          <Link to="/getstarted">
             <motion.button
               className="w-full sm:w-auto px-5 py-2.5 md:py-3 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm md:text-base cursor-pointer"
               whileHover={{

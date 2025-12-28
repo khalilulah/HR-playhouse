@@ -161,7 +161,7 @@ function Navbar() {
                 <Link to="/login">Login</Link>
               </button>
               <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer hover:scale-105 transition-transform duration-300">
-                <Link to="/signup">Get Started</Link>
+                <Link to="/getstarted">Get Started</Link>
               </button>
               {/* Mobile Menu Button */}
 
