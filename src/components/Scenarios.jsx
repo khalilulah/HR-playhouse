@@ -106,7 +106,7 @@ export default function DataCards() {
                 <img
                   src={item.image}
                   alt={item.heading}
-                  className="w-full h-100 rounded-lg object-cover transition-transform duration-500 hover:scale-101"
+                  className="w-full h-54 sm:h-80 md:h-96 lg:h-100 bg-secondary rounded-lg object-cover transition-transform duration-500 hover:scale-101"
                 />
               </div>
 

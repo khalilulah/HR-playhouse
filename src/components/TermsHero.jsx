@@ -90,7 +90,7 @@ function TermsHero() {
               <img
                 src={TermsImg}
                 loading="lazy"
-                className={`relative w-full h-auto object-cover rounded-lg shadow-2xl transition-all duration-1500 ease-out ${
+                className={`relative w-full h-auto bg-primary-text object-cover rounded-lg shadow-2xl transition-all duration-1500 ease-out ${
                   hoveredImage === 1
                     ? "scale-110 rotate-2 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
                     : "scale-100 rotate-0"
@@ -128,7 +128,7 @@ function TermsHero() {
               <img
                 src={TermsImg2}
                 loading="lazy"
-                className={`relative w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-700 ease-out ${
+                className={`relative w-full h-auto bg-primary-text object-cover shadow-2xl rounded-lg transition-all duration-700 ease-out ${
                   hoveredImage === 2
                     ? "scale-110 -rotate-2 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
                     : "scale-100 rotate-0"
