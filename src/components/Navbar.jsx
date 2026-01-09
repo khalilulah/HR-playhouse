@@ -157,12 +157,24 @@ function Navbar() {
               </div>
             </div>
             <div className="space-x-2.5 lg:space-x-5 flex items-center ">
-              <button className="hidden md:inline-block flex-col px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-[16px] cursor-pointer hover:scale-105 transition-transform duration-300">
-                <Link to="/login">Login</Link>
-              </button>
-              <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer hover:scale-105 transition-transform duration-300">
-                <Link to="/getstarted">Get Started</Link>
-              </button>
+              <Link
+                to="https://learn.thehrplayhousehub.org/dashboard/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="hidden md:inline-block flex-col px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary-50 rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-[16px] cursor-pointer hover:scale-105 transition-transform duration-300">
+                  Login
+                </button>
+              </Link>
+              <Link
+                to="https://learn.thehrplayhousehub.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="px-2.5 lg:px-5 py-1 lg:py-2 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm lg:text-md cursor-pointer hover:scale-105 transition-transform duration-300">
+                  Get Started
+                </button>
+              </Link>
               {/* Mobile Menu Button */}
 
               <button

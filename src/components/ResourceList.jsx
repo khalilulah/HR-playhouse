@@ -78,7 +78,11 @@ function ResourceList() {
                   {item.heading}
                 </h2>
                 <p className="mb-4 text-base sm:text-lg">{item.description}</p>
-                <Link to="/signup">
+                <Link
+                  to="https://learn.thehrplayhousehub.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <button className="px-2.5 lg:px-5 py-1 lg:py-2 border border-secondary rounded-4xl font-family-SatoshiBold text-secondary text-sm lg:text-md cursor-pointer hover:scale-105 hover:shadow-lg transition-all duration-300">
                     Get Started
                   </button>

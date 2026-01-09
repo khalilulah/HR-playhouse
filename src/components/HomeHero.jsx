@@ -192,7 +192,11 @@ function HomeHero() {
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
         >
-          <Link to="/getstarted">
+          <Link
+            to="https://learn.thehrplayhousehub.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.button
               className="w-full sm:w-auto px-5 py-2.5 md:py-3 bg-secondary rounded-4xl font-family-SatoshiBold text-primary text-sm md:text-base cursor-pointer"
               whileHover={{
@@ -204,7 +208,11 @@ function HomeHero() {
               Get Started
             </motion.button>
           </Link>
-          <Link to="/login">
+          <Link
+            to="https://learn.thehrplayhousehub.org/dashboard/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.button
               className="w-full sm:w-auto px-7 py-2.5 md:py-3 bg-secondary-50 rounded-3xl font-family-SatoshiBold text-secondary text-sm md:text-base cursor-pointer"
               whileHover={{
